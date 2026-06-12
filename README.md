@@ -9,6 +9,10 @@ Public documentation for the PRESIDIO *hardened-\** product family.
   governance, quality, security, supply-chain, operations, and privacy
   posture across the family.
 
+- **[Public portfolio overview](portfolio/README.md)** —
+  public-facing component map and aggregate metrics for the hardened product
+  family.
+
 ## What lives elsewhere
 
 Each product ships its own `README.md`, `SECURITY.md`, and (where
