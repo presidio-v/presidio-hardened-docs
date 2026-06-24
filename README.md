@@ -19,8 +19,10 @@ Public documentation for the PRESIDIO *hardened-\** product family.
 
 ## Weekly research notes
 
-The repository [wiki](../../wiki) carries a running
-**[Research-Notes](../../wiki/Research-Notes)** page, updated every Monday with
+The repository [wiki](https://github.com/presidio-v/presidio-hardened-docs/wiki)
+carries a running
+**[Research-Notes](https://github.com/presidio-v/presidio-hardened-docs/wiki/Research-Notes)**
+page, updated every Monday with
 the latest publication and citation digest plus a short prose note in Vladimir
 Stantchev's voice. Newest entry first; each is bylined and lint-gated before
 publication.
