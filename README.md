@@ -13,6 +13,18 @@ Public documentation for the PRESIDIO *hardened-\** product family.
   public-facing component map and aggregate metrics for the hardened product
   family.
 
+- **[Research Background](Research-Background.md)** —
+  research background and citation metrics for Vladimir Stantchev.
+  Refreshed automatically every Monday.
+
+## Weekly research notes
+
+The repository [wiki](../../wiki) carries a running
+**[Research-Notes](../../wiki/Research-Notes)** page, updated every Monday with
+the latest publication and citation digest plus a short prose note in Vladimir
+Stantchev's voice. Newest entry first; each is bylined and lint-gated before
+publication.
+
 ## What lives elsewhere
 
 Each product ships its own `README.md`, `SECURITY.md`, and (where
