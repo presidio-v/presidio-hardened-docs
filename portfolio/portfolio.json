@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-12T10:43:03Z",
+  "generated": "2026-06-25T09:16:38Z",
   "title": "PRESIDIO Hardened Public Portfolio",
-  "vision": "Public-facing snapshot of the PRESIDIO hardened component family: deployable hardened libraries, governance tools, cloud posture components, research artifacts, and flagship platforms. Non-public workspaces, scaffolding, and repository URLs are intentionally omitted.",
+  "vision": "Public-facing snapshot of the PRESIDIO hardened component family: deployable hardened libraries, governance tools, cloud posture components, research artifacts, and flagship platforms. Non-public workspaces, scaffolding, and private repository URLs are intentionally omitted.",
   "layers": [
     {
       "id": "infra",
@@ -16,7 +16,7 @@
     {
       "id": "governance",
       "label": "AI Governance & Assessment",
-      "blurb": "Assess and gate AI use cases against the IKI-Gov reference model and ISO certification evidence."
+      "blurb": "Assess and gate AI use cases against the IKI-Gov reference model and signed evidence records."
     },
     {
       "id": "flagship",
@@ -46,28 +46,42 @@
       "label": "posture feeds"
     },
     {
-      "from": "governance",
-      "to": "flagship",
-      "label": "gates AI use cases"
-    },
-    {
       "from": "research",
       "to": "flagship",
       "label": "publications underpin"
     }
   ],
+  "metrics": {
+    "loc": 119166,
+    "files": 1021,
+    "commits_total": 426,
+    "commits_90d": 382,
+    "changes_90d": 2334,
+    "churn_90d": 163497,
+    "with_deployments": 17,
+    "deployment_evidence_total": 32,
+    "live_deployments": 1,
+    "with_static_tests": 16,
+    "with_dynamic_tests": 17,
+    "installs_total": 3803,
+    "pypi_publishers": 13,
+    "signed_tag_projects": 11,
+    "signed_tags_total": 22
+  },
   "projects": [
     {
       "id": "presidio-hardened-angellist",
       "layer": "assurance",
       "stage": "code",
       "integrates": [],
-      "purpose": "Presidio security-hardened deal-flow triage & due-diligence toolkit for",
+      "purpose": "Security-hardened deal-flow triage and due-diligence toolkit.",
       "version": "0.7.1",
       "last_commit": "2026-06-07",
       "stale": false,
       "repo": "https://github.com/presidio-v/presidio-hardened-angellist",
       "pypi": "presidio-hardened-angellist",
+      "private": false,
+      "deployment": null,
       "metrics": {
         "deployments": {
           "configured": true,
@@ -76,6 +90,26 @@
             "python package",
             "release workflow"
           ]
+        },
+        "release": {
+          "pypi": {
+            "configured": true,
+            "workflow_count": 1,
+            "trusted_publishing": true,
+            "attestations": false,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "tag-gated",
+              "release environment"
+            ]
+          },
+          "signed_tags": {
+            "configured": false,
+            "total": 3,
+            "signed": 0,
+            "signals": []
+          }
         },
         "tests": {
           "static": {
@@ -103,6 +137,14 @@
           "churn_90d": 9978,
           "loc": 6462,
           "files": 45
+        },
+        "installs": {
+          "total": 407,
+          "pypi_last_month": 407,
+          "github_release_downloads": 0,
+          "sources": [
+            "pypi:last_month"
+          ]
         }
       }
     },
@@ -111,324 +153,44 @@
       "layer": "cloud",
       "stage": "flagship",
       "integrates": [],
-      "purpose": "Architectural translucency (Stantchev, ~2005) is the ability to monitor and",
-      "version": "0.8.0",
-      "last_commit": "2026-06-10",
+      "purpose": "Architecture transparency tooling for monitoring running systems against intended deployment structure.",
+      "version": "0.17.0",
+      "last_commit": "2026-06-22",
       "stale": false,
       "repo": "https://github.com/presidio-v/presidio-hardened-arch-translucency",
       "pypi": "presidio-hardened-arch-translucency",
+      "private": false,
+      "deployment": null,
       "metrics": {
         "deployments": {
           "configured": true,
           "workflow_count": 2,
-          "signals": [
-            "python package",
-            "release workflow"
-          ]
-        },
-        "tests": {
-          "static": {
-            "configured": true,
-            "workflow_count": 2,
-            "tools": [
-              "codeql",
-              "pip-audit",
-              "ruff"
-            ]
-          },
-          "dynamic": {
-            "configured": true,
-            "workflow_count": 1,
-            "tools": [
-              "pytest"
-            ],
-            "test_files": 17
-          }
-        },
-        "activity": {
-          "commits_total": 63,
-          "commits_90d": 63,
-          "changes_90d": 215,
-          "churn_90d": 23470,
-          "loc": 12307,
-          "files": 48
-        }
-      }
-    },
-    {
-      "id": "presidio-hardened-scoutsuite",
-      "layer": "cloud",
-      "stage": "code",
-      "integrates": [
-        "presidio-hardened-arch-translucency"
-      ],
-      "purpose": "A Presidio security-hardened distribution of ScoutSuite,",
-      "version": "0.2.0",
-      "last_commit": "2026-06-07",
-      "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-hardened-scoutsuite",
-      "pypi": "presidio-hardened-scoutsuite",
-      "metrics": {
-        "deployments": {
-          "configured": true,
-          "workflow_count": 3,
           "signals": [
             "container config",
             "python package",
             "release workflow"
           ]
         },
-        "tests": {
-          "static": {
-            "configured": true,
-            "workflow_count": 2,
-            "tools": [
-              "codeql",
-              "ruff"
-            ]
-          },
-          "dynamic": {
+        "release": {
+          "pypi": {
             "configured": true,
             "workflow_count": 1,
-            "tools": [
-              "pytest"
-            ],
-            "test_files": 5
-          }
-        },
-        "activity": {
-          "commits_total": 4,
-          "commits_90d": 4,
-          "changes_90d": 59,
-          "churn_90d": 3111,
-          "loc": 2279,
-          "files": 36
-        }
-      }
-    },
-    {
-      "id": "presidio-hardened-ai",
-      "layer": "flagship",
-      "stage": "flagship",
-      "integrates": [
-        "presidio-hardened-ikigov-assess",
-        "presidio-hardened-fl"
-      ],
-      "purpose": "Training-time privacy controls for AI. Where the rest of the toolkit governs",
-      "version": "0.30.0",
-      "last_commit": "2026-06-09",
-      "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-hardened-ai",
-      "pypi": "presidio-hardened-ai",
-      "metrics": {
-        "deployments": {
-          "configured": true,
-          "workflow_count": 1,
-          "signals": [
-            "python package",
-            "release workflow"
-          ]
-        },
-        "tests": {
-          "static": {
-            "configured": true,
-            "workflow_count": 5,
-            "tools": [
-              "codeql",
-              "pip-audit",
-              "ruff"
+            "trusted_publishing": true,
+            "attestations": false,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "release environment"
             ]
           },
-          "dynamic": {
+          "signed_tags": {
             "configured": true,
-            "workflow_count": 4,
-            "tools": [
-              "pytest"
-            ],
-            "test_files": 32
-          }
-        },
-        "activity": {
-          "commits_total": 37,
-          "commits_90d": 37,
-          "changes_90d": 289,
-          "churn_90d": 15452,
-          "loc": 11820,
-          "files": 83
-        }
-      }
-    },
-    {
-      "id": "presidio-hardened-treasury",
-      "layer": "flagship",
-      "stage": "flagship",
-      "integrates": [
-        "presidio-hardened-x402",
-        "presidio-hardened-scoutsuite"
-      ],
-      "purpose": "Audit-grade treasury close for crypto-first organizations. Flagship of the",
-      "version": "-",
-      "last_commit": "2026-06-12",
-      "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-hardened-treasury",
-      "pypi": null,
-      "metrics": {
-        "deployments": {
-          "configured": true,
-          "workflow_count": 0,
-          "signals": [
-            "container config"
-          ]
-        },
-        "tests": {
-          "static": {
-            "configured": false,
-            "workflow_count": 0,
-            "tools": []
-          },
-          "dynamic": {
-            "configured": true,
-            "workflow_count": 1,
-            "tools": [
-              "go test"
-            ],
-            "test_files": 1
-          }
-        },
-        "activity": {
-          "commits_total": 42,
-          "commits_90d": 42,
-          "changes_90d": 304,
-          "churn_90d": 19861,
-          "loc": 16682,
-          "files": 151
-        }
-      }
-    },
-    {
-      "id": "presidio-hardened-x402",
-      "layer": "flagship",
-      "stage": "flagship",
-      "integrates": [
-        "presidio-hardened-x402-mcp",
-        "presidio-hardened-requests"
-      ],
-      "purpose": "Security middleware for the x402 payment protocol.",
-      "version": "0.4.0",
-      "last_commit": "2026-06-07",
-      "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-hardened-x402",
-      "pypi": "presidio-hardened-x402",
-      "metrics": {
-        "deployments": {
-          "configured": true,
-          "workflow_count": 0,
-          "signals": [
-            "python package"
-          ]
-        },
-        "tests": {
-          "static": {
-            "configured": true,
-            "workflow_count": 2,
-            "tools": [
-              "bandit",
-              "codeql",
-              "ruff"
+            "total": 12,
+            "signed": 6,
+            "signals": [
+              "signed tag objects"
             ]
-          },
-          "dynamic": {
-            "configured": true,
-            "workflow_count": 1,
-            "tools": [
-              "pytest"
-            ],
-            "test_files": 17
           }
-        },
-        "activity": {
-          "commits_total": 56,
-          "commits_90d": 56,
-          "changes_90d": 240,
-          "churn_90d": 20282,
-          "loc": 11420,
-          "files": 74
-        }
-      }
-    },
-    {
-      "id": "presidio-hardened-x402-mcp",
-      "layer": "flagship",
-      "stage": "code",
-      "integrates": [
-        "presidio-hardened-x402"
-      ],
-      "purpose": "Pre-payment PII screener for x402 — agents call screen_payment_metadata(...) before signing, catching emails, SSNs, phone numbers, names, and other personal dat",
-      "version": "0.1.1",
-      "last_commit": "2026-06-07",
-      "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-hardened-x402-mcp",
-      "pypi": "presidio-hardened-x402-mcp",
-      "metrics": {
-        "deployments": {
-          "configured": true,
-          "workflow_count": 3,
-          "signals": [
-            "python package",
-            "release workflow"
-          ]
-        },
-        "tests": {
-          "static": {
-            "configured": true,
-            "workflow_count": 2,
-            "tools": [
-              "bandit",
-              "codeql",
-              "pip-audit",
-              "ruff"
-            ]
-          },
-          "dynamic": {
-            "configured": true,
-            "workflow_count": 1,
-            "tools": [
-              "pytest"
-            ],
-            "test_files": 6
-          }
-        },
-        "activity": {
-          "commits_total": 12,
-          "commits_90d": 12,
-          "changes_90d": 42,
-          "churn_90d": 4465,
-          "loc": 1460,
-          "files": 20
-        }
-      }
-    },
-    {
-      "id": "presidio-hardened-ikigov-assess",
-      "layer": "governance",
-      "stage": "flagship",
-      "integrates": [
-        "presidio-assessor",
-        "presidio-hardened-eai-classificator"
-      ],
-      "purpose": "IKI-Gov Assessment Tool — operationalises the IKI-Gov-Referenzmodell (Integrated KI-Governance Reference Model) as a practical CLI tool for assessing AI use cas",
-      "version": "0.21.0",
-      "last_commit": "2026-06-11",
-      "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-hardened-ikigov-assess",
-      "pypi": "presidio-hardened-ikigov-assess",
-      "metrics": {
-        "deployments": {
-          "configured": true,
-          "workflow_count": 0,
-          "signals": [
-            "python package"
-          ]
         },
         "tests": {
           "static": {
@@ -446,64 +208,24 @@
             "tools": [
               "pytest"
             ],
-            "test_files": 21
+            "test_files": 30
           }
         },
         "activity": {
-          "commits_total": 38,
-          "commits_90d": 38,
-          "changes_90d": 260,
-          "churn_90d": 19249,
-          "loc": 13068,
-          "files": 60
-        }
-      }
-    },
-    {
-      "id": "presidio-assessor",
-      "layer": "governance",
-      "stage": "code",
-      "integrates": [],
-      "purpose": "Evidence-gap analysis tool for ISO certification bodies. Reads a directory of",
-      "version": "0.2.0",
-      "last_commit": "2026-05-13",
-      "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-assessor",
-      "pypi": "presidio-assessor",
-      "metrics": {
-        "deployments": {
-          "configured": true,
-          "workflow_count": 0,
-          "signals": [
-            "python package"
+          "commits_total": 87,
+          "commits_90d": 64,
+          "changes_90d": 351,
+          "churn_90d": 28658,
+          "loc": 20324,
+          "files": 102
+        },
+        "installs": {
+          "total": 997,
+          "pypi_last_month": 997,
+          "github_release_downloads": 0,
+          "sources": [
+            "pypi:last_month"
           ]
-        },
-        "tests": {
-          "static": {
-            "configured": true,
-            "workflow_count": 2,
-            "tools": [
-              "codeql",
-              "pip-audit",
-              "ruff"
-            ]
-          },
-          "dynamic": {
-            "configured": true,
-            "workflow_count": 1,
-            "tools": [
-              "pytest"
-            ],
-            "test_files": 19
-          }
-        },
-        "activity": {
-          "commits_total": 3,
-          "commits_90d": 3,
-          "changes_90d": 57,
-          "churn_90d": 6794,
-          "loc": 5070,
-          "files": 48
         }
       }
     },
@@ -518,6 +240,8 @@
       "stale": false,
       "repo": "https://github.com/presidio-v/presidio-hardened-crypto-channel",
       "pypi": "presidio-hardened-crypto-channel",
+      "private": false,
+      "deployment": null,
       "metrics": {
         "deployments": {
           "configured": true,
@@ -526,6 +250,30 @@
             "python package",
             "release workflow"
           ]
+        },
+        "release": {
+          "pypi": {
+            "configured": true,
+            "workflow_count": 1,
+            "trusted_publishing": true,
+            "attestations": true,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "PEP 740 attestations",
+              "tag-gated",
+              "release environment"
+            ]
+          },
+          "signed_tags": {
+            "configured": true,
+            "total": 1,
+            "signed": 1,
+            "signals": [
+              "signed tag objects",
+              "signed-tag policy"
+            ]
+          }
         },
         "tests": {
           "static": {
@@ -552,6 +300,14 @@
           "churn_90d": 1297,
           "loc": 959,
           "files": 20
+        },
+        "installs": {
+          "total": 124,
+          "pypi_last_month": 124,
+          "github_release_downloads": 0,
+          "sources": [
+            "pypi:last_month"
+          ]
         }
       }
     },
@@ -566,6 +322,8 @@
       "stale": false,
       "repo": "https://github.com/presidio-v/presidio-hardened-esp32",
       "pypi": null,
+      "private": false,
+      "deployment": null,
       "metrics": {
         "deployments": {
           "configured": true,
@@ -573,6 +331,21 @@
           "signals": [
             "esp-idf component"
           ]
+        },
+        "release": {
+          "pypi": {
+            "configured": false,
+            "workflow_count": 0,
+            "trusted_publishing": false,
+            "attestations": false,
+            "signals": []
+          },
+          "signed_tags": {
+            "configured": false,
+            "total": 0,
+            "signed": 0,
+            "signals": []
+          }
         },
         "tests": {
           "static": {
@@ -593,11 +366,17 @@
         },
         "activity": {
           "commits_total": 10,
-          "commits_90d": 10,
-          "changes_90d": 61,
-          "churn_90d": 4491,
+          "commits_90d": 7,
+          "changes_90d": 13,
+          "churn_90d": 183,
           "loc": 3520,
           "files": 47
+        },
+        "installs": {
+          "total": 0,
+          "pypi_last_month": 0,
+          "github_release_downloads": 0,
+          "sources": []
         }
       }
     },
@@ -614,6 +393,8 @@
       "stale": false,
       "repo": "https://github.com/presidio-v/presidio-hardened-fastapi",
       "pypi": "presidio-hardened-fastapi",
+      "private": false,
+      "deployment": null,
       "metrics": {
         "deployments": {
           "configured": true,
@@ -622,6 +403,30 @@
             "python package",
             "release workflow"
           ]
+        },
+        "release": {
+          "pypi": {
+            "configured": true,
+            "workflow_count": 1,
+            "trusted_publishing": true,
+            "attestations": true,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "PEP 740 attestations",
+              "tag-gated",
+              "release environment"
+            ]
+          },
+          "signed_tags": {
+            "configured": true,
+            "total": 1,
+            "signed": 1,
+            "signals": [
+              "signed tag objects",
+              "signed-tag policy"
+            ]
+          }
         },
         "tests": {
           "static": {
@@ -644,11 +449,89 @@
         },
         "activity": {
           "commits_total": 11,
-          "commits_90d": 11,
-          "changes_90d": 75,
-          "churn_90d": 4688,
+          "commits_90d": 7,
+          "changes_90d": 29,
+          "churn_90d": 1752,
           "loc": 2688,
           "files": 47
+        },
+        "installs": {
+          "total": 180,
+          "pypi_last_month": 180,
+          "github_release_downloads": 0,
+          "sources": [
+            "pypi:last_month"
+          ]
+        }
+      }
+    },
+    {
+      "id": "presidio-hardened-fl",
+      "layer": "research",
+      "stage": "frozen",
+      "integrates": [],
+      "purpose": "Privacy-preserving federated learning simulation for PRES-EDU-CS-101",
+      "version": "0.1.0",
+      "last_commit": "2026-06-11",
+      "stale": false,
+      "repo": "https://github.com/presidio-v/presidio-hardened-fl",
+      "pypi": "presidio-hardened-fl",
+      "private": false,
+      "deployment": null,
+      "metrics": {
+        "deployments": {
+          "configured": true,
+          "workflow_count": 0,
+          "signals": [
+            "python package"
+          ]
+        },
+        "release": {
+          "pypi": {
+            "configured": false,
+            "workflow_count": 0,
+            "trusted_publishing": false,
+            "attestations": false,
+            "signals": []
+          },
+          "signed_tags": {
+            "configured": false,
+            "total": 0,
+            "signed": 0,
+            "signals": []
+          }
+        },
+        "tests": {
+          "static": {
+            "configured": true,
+            "workflow_count": 2,
+            "tools": [
+              "codeql",
+              "ruff"
+            ]
+          },
+          "dynamic": {
+            "configured": true,
+            "workflow_count": 1,
+            "tools": [
+              "pytest"
+            ],
+            "test_files": 6
+          }
+        },
+        "activity": {
+          "commits_total": 13,
+          "commits_90d": 13,
+          "changes_90d": 47,
+          "churn_90d": 2062,
+          "loc": 1545,
+          "files": 26
+        },
+        "installs": {
+          "total": 0,
+          "pypi_last_month": 0,
+          "github_release_downloads": 0,
+          "sources": []
         }
       }
     },
@@ -659,12 +542,14 @@
       "integrates": [
         "presidio-hardened-requests"
       ],
-      "purpose": "A hardened drop-in replacement for Flask that automatically applies production-grade security defaults (v0.2.0). Change one import line and your existing Flask ",
+      "purpose": "Hardened drop-in replacement for Flask with production security defaults applied automatically.",
       "version": "0.2.0",
       "last_commit": "2026-06-11",
       "stale": false,
       "repo": "https://github.com/presidio-v/presidio-hardened-flask",
       "pypi": "presidio-hardened-flask",
+      "private": false,
+      "deployment": null,
       "metrics": {
         "deployments": {
           "configured": true,
@@ -673,6 +558,30 @@
             "python package",
             "release workflow"
           ]
+        },
+        "release": {
+          "pypi": {
+            "configured": true,
+            "workflow_count": 1,
+            "trusted_publishing": true,
+            "attestations": true,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "PEP 740 attestations",
+              "tag-gated",
+              "release environment"
+            ]
+          },
+          "signed_tags": {
+            "configured": true,
+            "total": 1,
+            "signed": 1,
+            "signals": [
+              "signed tag objects",
+              "signed-tag policy"
+            ]
+          }
         },
         "tests": {
           "static": {
@@ -695,11 +604,172 @@
         },
         "activity": {
           "commits_total": 18,
-          "commits_90d": 18,
-          "changes_90d": 124,
-          "churn_90d": 8757,
+          "commits_90d": 10,
+          "changes_90d": 21,
+          "churn_90d": 373,
           "loc": 4387,
           "files": 59
+        },
+        "installs": {
+          "total": 152,
+          "pypi_last_month": 152,
+          "github_release_downloads": 0,
+          "sources": [
+            "pypi:last_month"
+          ]
+        }
+      }
+    },
+    {
+      "id": "presidio-hardened-ids",
+      "layer": "research",
+      "stage": "frozen",
+      "integrates": [],
+      "purpose": "ML-based intrusion detection system with adversarial evasion and hardening.",
+      "version": "0.1.0",
+      "last_commit": "2026-06-11",
+      "stale": false,
+      "repo": "https://github.com/presidio-v/presidio-hardened-ids",
+      "pypi": "presidio-hardened-ids",
+      "private": false,
+      "deployment": null,
+      "metrics": {
+        "deployments": {
+          "configured": true,
+          "workflow_count": 0,
+          "signals": [
+            "python package"
+          ]
+        },
+        "release": {
+          "pypi": {
+            "configured": false,
+            "workflow_count": 0,
+            "trusted_publishing": false,
+            "attestations": false,
+            "signals": []
+          },
+          "signed_tags": {
+            "configured": false,
+            "total": 0,
+            "signed": 0,
+            "signals": []
+          }
+        },
+        "tests": {
+          "static": {
+            "configured": true,
+            "workflow_count": 2,
+            "tools": [
+              "codeql",
+              "ruff"
+            ]
+          },
+          "dynamic": {
+            "configured": true,
+            "workflow_count": 1,
+            "tools": [
+              "pytest"
+            ],
+            "test_files": 6
+          }
+        },
+        "activity": {
+          "commits_total": 5,
+          "commits_90d": 5,
+          "changes_90d": 36,
+          "churn_90d": 1603,
+          "loc": 1199,
+          "files": 26
+        },
+        "installs": {
+          "total": 0,
+          "pypi_last_month": 0,
+          "github_release_downloads": 0,
+          "sources": []
+        }
+      }
+    },
+    {
+      "id": "presidio-hardened-ikigov-assess",
+      "layer": "governance",
+      "stage": "flagship",
+      "integrates": [],
+      "purpose": "CLI assessment tool for evaluating AI use cases against the IKI-Gov reference model and evidence requirements.",
+      "version": "0.21.1",
+      "last_commit": "2026-06-25",
+      "stale": false,
+      "repo": "https://github.com/presidio-v/presidio-hardened-ikigov-assess",
+      "pypi": "presidio-hardened-ikigov-assess",
+      "private": false,
+      "deployment": null,
+      "metrics": {
+        "deployments": {
+          "configured": true,
+          "workflow_count": 2,
+          "signals": [
+            "python package",
+            "release workflow"
+          ]
+        },
+        "release": {
+          "pypi": {
+            "configured": true,
+            "workflow_count": 2,
+            "trusted_publishing": true,
+            "attestations": true,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "PEP 740 attestations",
+              "tag-gated",
+              "release environment"
+            ]
+          },
+          "signed_tags": {
+            "configured": true,
+            "total": 22,
+            "signed": 3,
+            "signals": [
+              "signed tag objects",
+              "signed-tag policy"
+            ]
+          }
+        },
+        "tests": {
+          "static": {
+            "configured": true,
+            "workflow_count": 2,
+            "tools": [
+              "codeql",
+              "pip-audit",
+              "ruff"
+            ]
+          },
+          "dynamic": {
+            "configured": true,
+            "workflow_count": 1,
+            "tools": [
+              "pytest"
+            ],
+            "test_files": 21
+          }
+        },
+        "activity": {
+          "commits_total": 49,
+          "commits_90d": 49,
+          "changes_90d": 290,
+          "churn_90d": 22010,
+          "loc": 13603,
+          "files": 64
+        },
+        "installs": {
+          "total": 106,
+          "pypi_last_month": 106,
+          "github_release_downloads": 0,
+          "sources": [
+            "pypi:last_month"
+          ]
         }
       }
     },
@@ -714,6 +784,8 @@
       "stale": false,
       "repo": "https://github.com/presidio-v/presidio-hardened-opcua",
       "pypi": "presidio-hardened-opcua",
+      "private": false,
+      "deployment": null,
       "metrics": {
         "deployments": {
           "configured": true,
@@ -722,6 +794,30 @@
             "python package",
             "release workflow"
           ]
+        },
+        "release": {
+          "pypi": {
+            "configured": true,
+            "workflow_count": 1,
+            "trusted_publishing": true,
+            "attestations": true,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "PEP 740 attestations",
+              "tag-gated",
+              "release environment"
+            ]
+          },
+          "signed_tags": {
+            "configured": true,
+            "total": 1,
+            "signed": 1,
+            "signals": [
+              "signed tag objects",
+              "signed-tag policy"
+            ]
+          }
         },
         "tests": {
           "static": {
@@ -743,11 +839,19 @@
         },
         "activity": {
           "commits_total": 16,
-          "commits_90d": 16,
-          "changes_90d": 65,
-          "churn_90d": 4197,
+          "commits_90d": 13,
+          "changes_90d": 22,
+          "churn_90d": 793,
           "loc": 3239,
           "files": 44
+        },
+        "installs": {
+          "total": 141,
+          "pypi_last_month": 141,
+          "github_release_downloads": 0,
+          "sources": [
+            "pypi:last_month"
+          ]
         }
       }
     },
@@ -756,12 +860,14 @@
       "layer": "infra",
       "stage": "frozen",
       "integrates": [],
-      "purpose": "A 100% drop-in replacement for the Python",
+      "purpose": "Hardened drop-in replacement for Python requests with secure defaults for TLS, timeouts, and defensive HTTP use.",
       "version": "0.2.0",
       "last_commit": "2026-06-11",
       "stale": false,
       "repo": "https://github.com/presidio-v/presidio-hardened-requests",
       "pypi": "presidio-hardened-requests",
+      "private": false,
+      "deployment": null,
       "metrics": {
         "deployments": {
           "configured": true,
@@ -770,6 +876,30 @@
             "python package",
             "release workflow"
           ]
+        },
+        "release": {
+          "pypi": {
+            "configured": true,
+            "workflow_count": 1,
+            "trusted_publishing": true,
+            "attestations": true,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "PEP 740 attestations",
+              "tag-gated",
+              "release environment"
+            ]
+          },
+          "signed_tags": {
+            "configured": true,
+            "total": 1,
+            "signed": 1,
+            "signals": [
+              "signed tag objects",
+              "signed-tag policy"
+            ]
+          }
         },
         "tests": {
           "static": {
@@ -792,11 +922,250 @@
         },
         "activity": {
           "commits_total": 8,
-          "commits_90d": 8,
-          "changes_90d": 54,
-          "churn_90d": 3473,
+          "commits_90d": 5,
+          "changes_90d": 18,
+          "churn_90d": 453,
           "loc": 2586,
           "files": 36
+        },
+        "installs": {
+          "total": 106,
+          "pypi_last_month": 106,
+          "github_release_downloads": 0,
+          "sources": [
+            "pypi:last_month"
+          ]
+        }
+      }
+    },
+    {
+      "id": "presidio-hardened-scoutsuite",
+      "layer": "cloud",
+      "stage": "code",
+      "integrates": [
+        "presidio-hardened-arch-translucency"
+      ],
+      "purpose": "Security-hardened ScoutSuite distribution for cloud posture assessment.",
+      "version": "0.29.0",
+      "last_commit": "2026-06-18",
+      "stale": false,
+      "repo": "https://github.com/presidio-v/presidio-hardened-scoutsuite",
+      "pypi": "presidio-hardened-scoutsuite",
+      "private": false,
+      "deployment": null,
+      "metrics": {
+        "deployments": {
+          "configured": true,
+          "workflow_count": 3,
+          "signals": [
+            "container config",
+            "python package",
+            "release workflow"
+          ]
+        },
+        "release": {
+          "pypi": {
+            "configured": true,
+            "workflow_count": 1,
+            "trusted_publishing": true,
+            "attestations": false,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "tag-gated",
+              "release environment"
+            ]
+          },
+          "signed_tags": {
+            "configured": true,
+            "total": 2,
+            "signed": 2,
+            "signals": [
+              "signed tag objects"
+            ]
+          }
+        },
+        "tests": {
+          "static": {
+            "configured": true,
+            "workflow_count": 4,
+            "tools": [
+              "codeql",
+              "pip-audit",
+              "ruff",
+              "trivy"
+            ]
+          },
+          "dynamic": {
+            "configured": true,
+            "workflow_count": 3,
+            "tools": [
+              "pytest"
+            ],
+            "test_files": 34
+          }
+        },
+        "activity": {
+          "commits_total": 37,
+          "commits_90d": 37,
+          "changes_90d": 413,
+          "churn_90d": 22945,
+          "loc": 15467,
+          "files": 118
+        },
+        "installs": {
+          "total": 151,
+          "pypi_last_month": 151,
+          "github_release_downloads": 0,
+          "sources": [
+            "pypi:last_month"
+          ]
+        }
+      }
+    },
+    {
+      "id": "presidio-hardened-treasury",
+      "layer": "flagship",
+      "stage": "flagship",
+      "integrates": [
+        "presidio-hardened-x402",
+        "presidio-hardened-scoutsuite"
+      ],
+      "purpose": "Audit-grade treasury close tooling for crypto-first organizations.",
+      "version": "0.21.0",
+      "last_commit": "2026-06-12",
+      "stale": false,
+      "repo": "https://github.com/presidio-v/presidio-hardened-treasury",
+      "pypi": null,
+      "private": false,
+      "deployment": null,
+      "metrics": {
+        "deployments": {
+          "configured": true,
+          "workflow_count": 0,
+          "signals": [
+            "container config"
+          ]
+        },
+        "release": {
+          "pypi": {
+            "configured": false,
+            "workflow_count": 0,
+            "trusted_publishing": false,
+            "attestations": false,
+            "signals": []
+          },
+          "signed_tags": {
+            "configured": false,
+            "total": 0,
+            "signed": 0,
+            "signals": []
+          }
+        },
+        "tests": {
+          "static": {
+            "configured": false,
+            "workflow_count": 0,
+            "tools": []
+          },
+          "dynamic": {
+            "configured": true,
+            "workflow_count": 1,
+            "tools": [
+              "go test"
+            ],
+            "test_files": 1
+          }
+        },
+        "activity": {
+          "commits_total": 42,
+          "commits_90d": 42,
+          "changes_90d": 304,
+          "churn_90d": 19861,
+          "loc": 16682,
+          "files": 151
+        },
+        "installs": {
+          "total": 0,
+          "pypi_last_month": 0,
+          "github_release_downloads": 0,
+          "sources": []
+        }
+      }
+    },
+    {
+      "id": "presidio-hardened-vol-asssign",
+      "layer": "research",
+      "stage": "research",
+      "integrates": [],
+      "purpose": "Python CLI implementation of a multi-objective volunteer assignment model.",
+      "version": "0.2.0",
+      "last_commit": "2026-06-07",
+      "stale": false,
+      "repo": "https://github.com/presidio-v/presidio-hardened-vol-assign",
+      "pypi": "presidio-hardened-vol-assign",
+      "private": false,
+      "deployment": null,
+      "metrics": {
+        "deployments": {
+          "configured": true,
+          "workflow_count": 1,
+          "signals": [
+            "python package",
+            "release workflow"
+          ]
+        },
+        "release": {
+          "pypi": {
+            "configured": true,
+            "workflow_count": 1,
+            "trusted_publishing": true,
+            "attestations": false,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "release environment"
+            ]
+          },
+          "signed_tags": {
+            "configured": false,
+            "total": 1,
+            "signed": 0,
+            "signals": []
+          }
+        },
+        "tests": {
+          "static": {
+            "configured": true,
+            "workflow_count": 2,
+            "tools": [
+              "codeql",
+              "pip-audit",
+              "ruff"
+            ]
+          },
+          "dynamic": {
+            "configured": true,
+            "workflow_count": 2,
+            "tools": [
+              "pytest"
+            ],
+            "test_files": 30
+          }
+        },
+        "activity": {
+          "commits_total": 11,
+          "commits_90d": 11,
+          "changes_90d": 117,
+          "churn_90d": 12917,
+          "loc": 6522,
+          "files": 56
+        },
+        "installs": {
+          "total": 0,
+          "pypi_last_month": 0,
+          "github_release_downloads": 0,
+          "sources": []
         }
       }
     },
@@ -811,6 +1180,8 @@
       "stale": false,
       "repo": "https://github.com/presidio-v/presidio-hardened-vuln-scanner",
       "pypi": "presidio-hardened-vuln-scanner",
+      "private": false,
+      "deployment": null,
       "metrics": {
         "deployments": {
           "configured": true,
@@ -819,6 +1190,30 @@
             "python package",
             "release workflow"
           ]
+        },
+        "release": {
+          "pypi": {
+            "configured": true,
+            "workflow_count": 1,
+            "trusted_publishing": true,
+            "attestations": true,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "PEP 740 attestations",
+              "tag-gated",
+              "release environment"
+            ]
+          },
+          "signed_tags": {
+            "configured": true,
+            "total": 1,
+            "signed": 1,
+            "signals": [
+              "signed tag objects",
+              "signed-tag policy"
+            ]
+          }
         },
         "tests": {
           "static": {
@@ -847,220 +1242,77 @@
           "churn_90d": 1768,
           "loc": 1346,
           "files": 29
+        },
+        "installs": {
+          "total": 150,
+          "pypi_last_month": 150,
+          "github_release_downloads": 0,
+          "sources": [
+            "pypi:last_month"
+          ]
         }
       }
     },
     {
-      "id": "presidio-hardened-eai-classificator",
-      "layer": "research",
-      "stage": "research",
+      "id": "presidio-hardened-x402",
+      "layer": "flagship",
+      "stage": "flagship",
       "integrates": [
-        "presidio-hardened-ikigov-assess"
+        "presidio-hardened-x402-mcp",
+        "presidio-hardened-requests"
       ],
-      "purpose": "LaTeX sources for Borovac & Stantchev, An Enterprise AI Classification Framework for Business Transformation. Target venue: MDPI Information.",
-      "version": "-",
-      "last_commit": "2026-06-02",
+      "purpose": "Security middleware for the x402 payment protocol.",
+      "version": "0.7.0",
+      "last_commit": "2026-06-23",
       "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-hardened-eai-classificator",
-      "pypi": null,
-      "metrics": {
-        "deployments": {
-          "configured": false,
-          "workflow_count": 0,
-          "signals": []
-        },
-        "tests": {
-          "static": {
-            "configured": false,
-            "workflow_count": 0,
-            "tools": []
-          },
-          "dynamic": {
-            "configured": false,
-            "workflow_count": 0,
-            "tools": [],
-            "test_files": 0
-          }
-        },
-        "activity": {
-          "commits_total": 12,
-          "commits_90d": 12,
-          "changes_90d": 113,
-          "churn_90d": 51304,
-          "loc": 16506,
-          "files": 51
-        }
-      }
-    },
-    {
-      "id": "presidio-hardened-fl",
-      "layer": "research",
-      "stage": "frozen",
-      "integrates": [],
-      "purpose": "Privacy-preserving federated learning simulation for PRES-EDU-CS-101",
-      "version": "0.1.0",
-      "last_commit": "2026-06-11",
-      "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-hardened-fl",
-      "pypi": "presidio-hardened-fl",
+      "repo": "https://github.com/presidio-v/presidio-hardened-x402",
+      "pypi": "presidio-hardened-x402",
+      "private": false,
+      "deployment": {
+        "url": "screen.presidio-group.eu",
+        "label": "x402 Screening API",
+        "live_since": "2026-04",
+        "requests_served": null
+      },
       "metrics": {
         "deployments": {
           "configured": true,
-          "workflow_count": 0,
-          "signals": [
-            "python package"
-          ]
-        },
-        "tests": {
-          "static": {
-            "configured": true,
-            "workflow_count": 2,
-            "tools": [
-              "codeql",
-              "ruff"
-            ]
-          },
-          "dynamic": {
-            "configured": true,
-            "workflow_count": 1,
-            "tools": [
-              "pytest"
-            ],
-            "test_files": 6
-          }
-        },
-        "activity": {
-          "commits_total": 13,
-          "commits_90d": 13,
-          "changes_90d": 47,
-          "churn_90d": 2062,
-          "loc": 1545,
-          "files": 26
-        }
-      }
-    },
-    {
-      "id": "presidio-hardened-ids",
-      "layer": "research",
-      "stage": "frozen",
-      "integrates": [],
-      "purpose": "ML-based intrusion detection system with adversarial evasion and hardening.",
-      "version": "0.1.0",
-      "last_commit": "2026-06-11",
-      "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-hardened-ids",
-      "pypi": "presidio-hardened-ids",
-      "metrics": {
-        "deployments": {
-          "configured": true,
-          "workflow_count": 0,
-          "signals": [
-            "python package"
-          ]
-        },
-        "tests": {
-          "static": {
-            "configured": true,
-            "workflow_count": 2,
-            "tools": [
-              "codeql",
-              "ruff"
-            ]
-          },
-          "dynamic": {
-            "configured": true,
-            "workflow_count": 1,
-            "tools": [
-              "pytest"
-            ],
-            "test_files": 6
-          }
-        },
-        "activity": {
-          "commits_total": 5,
-          "commits_90d": 5,
-          "changes_90d": 36,
-          "churn_90d": 1603,
-          "loc": 1199,
-          "files": 26
-        }
-      }
-    },
-    {
-      "id": "presidio-hardened-predictor",
-      "layer": "research",
-      "stage": "frozen",
-      "integrates": [
-        "presidio-hardened-x402"
-      ],
-      "purpose": "A hardened CLI tool that connects to prediction markets, applies pluggable betting",
-      "version": "0.1.0",
-      "last_commit": "2026-06-11",
-      "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-hardened-predictor",
-      "pypi": "presidio-hardened-predictor",
-      "metrics": {
-        "deployments": {
-          "configured": true,
-          "workflow_count": 0,
-          "signals": [
-            "python package"
-          ]
-        },
-        "tests": {
-          "static": {
-            "configured": true,
-            "workflow_count": 2,
-            "tools": [
-              "codeql",
-              "pip-audit",
-              "ruff"
-            ]
-          },
-          "dynamic": {
-            "configured": true,
-            "workflow_count": 1,
-            "tools": [
-              "pytest"
-            ],
-            "test_files": 13
-          }
-        },
-        "activity": {
-          "commits_total": 2,
-          "commits_90d": 2,
-          "changes_90d": 59,
-          "churn_90d": 3843,
-          "loc": 3011,
-          "files": 56
-        }
-      }
-    },
-    {
-      "id": "presidio-hardened-vol-asssign",
-      "layer": "research",
-      "stage": "research",
-      "integrates": [],
-      "purpose": "A production-ready Python CLI tool (pva) implementing the multi-objective volunteer assignment model from:",
-      "version": "0.2.0",
-      "last_commit": "2026-06-07",
-      "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-hardened-vol-assign",
-      "pypi": "presidio-hardened-vol-assign",
-      "metrics": {
-        "deployments": {
-          "configured": true,
-          "workflow_count": 1,
+          "workflow_count": 2,
           "signals": [
             "python package",
             "release workflow"
           ]
         },
+        "release": {
+          "pypi": {
+            "configured": true,
+            "workflow_count": 1,
+            "trusted_publishing": true,
+            "attestations": true,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "PEP 740 attestations",
+              "tag-gated",
+              "release environment"
+            ]
+          },
+          "signed_tags": {
+            "configured": true,
+            "total": 5,
+            "signed": 3,
+            "signals": [
+              "signed tag objects",
+              "signed-tag policy"
+            ]
+          }
+        },
         "tests": {
           "static": {
             "configured": true,
             "workflow_count": 2,
             "tools": [
+              "bandit",
               "codeql",
               "pip-audit",
               "ruff"
@@ -1068,76 +1320,115 @@
           },
           "dynamic": {
             "configured": true,
-            "workflow_count": 2,
+            "workflow_count": 1,
             "tools": [
               "pytest"
             ],
-            "test_files": 30
+            "test_files": 53
           }
         },
         "activity": {
-          "commits_total": 11,
-          "commits_90d": 11,
-          "changes_90d": 117,
-          "churn_90d": 12917,
-          "loc": 6522,
-          "files": 56
+          "commits_total": 77,
+          "commits_90d": 77,
+          "changes_90d": 388,
+          "churn_90d": 32365,
+          "loc": 17175,
+          "files": 131
+        },
+        "installs": {
+          "total": 908,
+          "pypi_last_month": 904,
+          "github_release_downloads": 4,
+          "sources": [
+            "github:release_assets",
+            "pypi:last_month"
+          ]
         }
       }
     },
     {
-      "id": "presidio-hardened-zkp",
-      "layer": "research",
-      "stage": "research",
-      "integrates": [],
-      "purpose": "Reference implementation and experimental harness for the paper",
-      "version": "-",
-      "last_commit": "2026-05-10",
+      "id": "presidio-hardened-x402-mcp",
+      "layer": "flagship",
+      "stage": "code",
+      "integrates": [
+        "presidio-hardened-x402"
+      ],
+      "purpose": "MCP pre-payment PII screener for x402 payment metadata before an agent signs a request.",
+      "version": "0.1.1",
+      "last_commit": "2026-06-15",
       "stale": false,
-      "repo": "https://github.com/presidio-v/presidio-hardened-zkp",
-      "pypi": null,
+      "repo": "https://github.com/presidio-v/presidio-hardened-x402-mcp",
+      "pypi": "presidio-hardened-x402-mcp",
+      "private": false,
+      "deployment": null,
       "metrics": {
         "deployments": {
           "configured": true,
-          "workflow_count": 0,
+          "workflow_count": 3,
           "signals": [
-            "node package"
+            "python package",
+            "release workflow"
           ]
+        },
+        "release": {
+          "pypi": {
+            "configured": true,
+            "workflow_count": 1,
+            "trusted_publishing": true,
+            "attestations": false,
+            "signals": [
+              "PyPI publish workflow",
+              "Trusted Publisher",
+              "tag-gated",
+              "release environment"
+            ]
+          },
+          "signed_tags": {
+            "configured": true,
+            "total": 2,
+            "signed": 2,
+            "signals": [
+              "signed tag objects"
+            ]
+          }
         },
         "tests": {
           "static": {
-            "configured": false,
-            "workflow_count": 0,
-            "tools": []
+            "configured": true,
+            "workflow_count": 2,
+            "tools": [
+              "bandit",
+              "codeql",
+              "pip-audit",
+              "ruff"
+            ]
           },
           "dynamic": {
-            "configured": false,
-            "workflow_count": 0,
-            "tools": [],
-            "test_files": 0
+            "configured": true,
+            "workflow_count": 1,
+            "tools": [
+              "pytest"
+            ],
+            "test_files": 6
           }
         },
         "activity": {
-          "commits_total": 14,
-          "commits_90d": 14,
-          "changes_90d": 62,
-          "churn_90d": 5537,
-          "loc": 4384,
-          "files": 35
+          "commits_total": 16,
+          "commits_90d": 16,
+          "changes_90d": 47,
+          "churn_90d": 4479,
+          "loc": 1462,
+          "files": 20
+        },
+        "installs": {
+          "total": 381,
+          "pypi_last_month": 381,
+          "github_release_downloads": 0,
+          "sources": [
+            "pypi:last_month"
+          ]
         }
       }
     }
-  ],
-  "metrics": {
-    "loc": 132460,
-    "files": 1097,
-    "commits_total": 401,
-    "commits_90d": 401,
-    "changes_90d": 2517,
-    "churn_90d": 228599,
-    "with_deployments": 21,
-    "deployment_evidence_total": 34,
-    "with_static_tests": 19,
-    "with_dynamic_tests": 20
-  }
+  ]
 }
