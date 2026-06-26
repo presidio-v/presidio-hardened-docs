@@ -1,8 +1,8 @@
 ---
 title: PRESIDIO — Secure Development Lifecycle
 subtitle: Public report on governance, quality, security, and supply-chain posture
-version: 1.0
-date: 2026-04-20
+version: 1.1
+date: 2026-06-26
 audience: Customers, partners, and prospective adopters
 ---
 
