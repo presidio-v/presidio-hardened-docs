@@ -40,7 +40,7 @@ software runs, not by the language or package format:
 - **Commercial-operated baseline.** Adds the full framework on top of the
   open-source baseline: STRIDE + LINDDUN GO threat modelling, OWASP ASVS 5.0
   L2 verification (L3 aspirational for authentication and cryptography), an
-  adversary-chain release gate, SLSA v1.0 L2 build provenance, Sigstore
+  adversary-chain release gate, SLSA v1.0 Build L3 provenance, Sigstore
   keyless signing, CycloneDX SBOMs, a DPIA, SLOs and an incident-response
   policy. This baseline applies to:
 
@@ -86,7 +86,7 @@ combined so that each lifecycle phase has a well-defined control catalogue.
 | Anchor | ISO/IEC/IEEE 29148:2018 | Requirements engineering; RFC 2119 language; traceability |
 | Overlay | OWASP ASVS 5.0 | Application-security verification; **L2 baseline** for the commercial-operated tier, **L3 aspirational** for authentication and cryptography in PRESIDIO-operated services |
 | Overlay | LINDDUN GO | Privacy-threat modelling (EU-origin, PII-centric) |
-| Overlay | SLSA v1.0 | Build-time supply-chain integrity; **Level 2 target** |
+| Overlay | SLSA v1.0 | Build-time supply-chain integrity; **Build Level 3** |
 | Overlay | OpenSSF Scorecard | Automated open-source posture checks; **score ≥ 7.0** |
 | Reference | ISO/IEC 27001 Annex A.14 | Development-and-maintenance controls |
 | Reference | ISO/IEC 27034-1, ISO/IEC 29100 | Application-security and privacy concepts |
@@ -219,7 +219,7 @@ The release gate aggregates:
 
 | Control | Mechanism | Tier |
 |---|---|---|
-| Build provenance | SLSA v1.0 Level 2 — hosted build platform with authenticated, in-toto provenance attestations | commercial-operated |
+| Build provenance | SLSA v1.0 Build Level 3 — hardened, isolated GitHub-hosted builds with non-forgeable in-toto provenance attestations (signing identity inaccessible to build steps) | commercial-operated |
 | Artefact signing | Keyless signing via Sigstore; single trust root is the build workflow's OIDC identity; no long-lived signing keys exist in the project | commercial-operated |
 | Publishing | Trusted Publishing from the build platform to the package registry — no API tokens stored | commercial-operated |
 | Software Bill of Materials | CycloneDX v1.6 JSON, generated per release and attached to every release | commercial-operated |
@@ -315,7 +315,7 @@ Headline metrics published per release:
 | ASVS Level 3 aspirational (auth + crypto) | Status recorded, gaps have remediation dates |
 | Adversary chains closed, waived, or transferred | All |
 | OpenSSF Scorecard | ≥ 7.0 |
-| SLSA provenance level | ≥ Level 2 |
+| SLSA provenance level | ≥ Build Level 3 |
 | Uptime (service, free tier) | ≥ 99.5 % per month |
 | Mean time to remediate critical security patch | ≤ 7 days |
 
@@ -333,8 +333,10 @@ publicly committed:
 - **Role separation.** Release signing, data-protection contact, and external
   security review separate into distinct roles as PRESIDIO scales beyond the
   current maintainer model.
-- **SLSA Level 3.** Hardened, hermetic builds with non-forgeable provenance,
-  following the Level 2 work already in place.
+- **Hermetic and reproducible builds.** SLSA Build Level 3 (hardened, isolated
+  builds with non-forgeable provenance) is in place; the next step is hermetic,
+  byte-reproducible builds — a self-imposed stretch target, as SLSA v1.0 defines
+  no Build Level 4.
 - **Fuzz and property-based testing.** Expanded coverage of security-critical
   parsers.
 - **OpenSSF Best-Practices Badge.** Submission once the single-maintainer
