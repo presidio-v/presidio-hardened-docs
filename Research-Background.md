@@ -31,7 +31,6 @@ Source: [Google Scholar](https://scholar.google.com/citations?user=KrWci6QAAAAJ)
 
 ## Publications
 
-- *A Novel Enterprise AI Classification Framework for Business Transformation: A Structured Literature Review and Integration of AI Types and Autonomy Levels* (2026). N. Borovac, V. Stantchev. Information (MDPI), 17(7):646 — [doi:10.3390/info17070646](https://doi.org/10.3390/info17070646).
 - *Hardening x402: PII-Safe Agentic Payments via Pre-Execution Metadata Filtering* (2026). V. Stantchev. CoRR (arXiv preprint).
 - *Introducing a novel multi-objective optimization model for volunteer assignment in the post-disaster phase* (2023). P. Rabiei, D. Arias-Aranda, V. Stantchev. Expert Systems with Applications.
 - *Perspectives on risks and standards that affect the requirements engineering of blockchain technology* (2020). N. Drljevic, D. Arias-Aranda, V. Stantchev. Computer Standards & Interfaces — 110 citations.
@@ -54,4 +53,4 @@ Source: [Google Scholar](https://scholar.google.com/citations?user=KrWci6QAAAAJ)
 
 ---
 
-*Prepared by Vladimir Stantchev. Maintained from a local profile database; last updated 2026-07-02.*
+*Prepared by Vladimir Stantchev. Maintained from a local profile database; last updated 2026-07-06.*
