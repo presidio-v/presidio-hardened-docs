@@ -53,4 +53,4 @@ Source: [Google Scholar](https://scholar.google.com/citations?user=KrWci6QAAAAJ)
 
 ---
 
-*Prepared by Vladimir Stantchev. Maintained from a local profile database; last updated 2026-07-06.*
+*Prepared by Vladimir Stantchev. Maintained from a local profile database; last updated 2026-07-13.*
