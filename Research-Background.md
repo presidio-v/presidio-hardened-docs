@@ -39,6 +39,7 @@ Computational jurisprudence (CJ) — the discipline in which compliance becomes 
 - *Hardening x402: PII-Safe Agentic Payments via Pre-Execution Metadata Filtering* (2026). V. Stantchev. CoRR (arXiv preprint).
 - *[Business Continuity Management—Identifying Relevant Processes for a Reference Model](https://doi.org/10.3390/app16073219)* (2026). D. Arias-Aranda, K. Haufe, S. Dzombeta, V. Stantchev. Applied Sciences (MDPI), 16(7):3219.
 - *[A Novel Enterprise AI Classification Framework for Business Transformation: A Structured Literature Review and Integration of AI Types and Autonomy Levels](https://doi.org/10.3390/info17070646)* (2026). N. Borovac, V. Stantchev. Information (MDPI), 17(7):646.
+- *[Computable Compliance as Institutional Technology: A Demand-Side Entry Point for Peripheral Tech Ecosystems — The Case of Burgas](https://uni-sofia.bg/index.php/eng/content/download/360018/2306858/file/BEP-2026-03.pdf)* (2026). V. Stantchev, T. Sedlarski. Bulgarian Economic Papers, Faculty of Economics, Sofia University (BEP 2026-03).
 - *Introducing a novel multi-objective optimization model for volunteer assignment in the post-disaster phase* (2023). P. Rabiei, D. Arias-Aranda, V. Stantchev. Expert Systems with Applications.
 - *Perspectives on risks and standards that affect the requirements engineering of blockchain technology* (2020). N. Drljevic, D. Arias-Aranda, V. Stantchev. Computer Standards & Interfaces — 110 citations.
 - *Integration of Internet of Things (IoT) and Blockchain to increase humanitarian aid supply chains performance* (2019). D. Arias-Aranda, et al., V. Stantchev. 5th Int. Conf. on Transportation Information and Safety — 75 citations.
@@ -61,6 +62,7 @@ Computational jurisprudence (CJ) — the discipline in which compliance becomes 
 ## Upcoming publications
 
 - *[Computational Jurisprudence: Verifiable Law for Machine Societies](https://doi.org/10.5281/zenodo.21245659)* — V. Stantchev. Future Internet (MDPI) — invited feature paper — under review (submitted 2026-07-18). Position-paper version publicly available on Zenodo (v1.0, 2026-07-07).
+- *Computable Compliance as Institutional Technology: A Demand-Side Entry Point for Peripheral Tech Ecosystems — The Case of Burgas* — V. Stantchev, T. Sedlarski. Journal of Economics and Business Thought (JEBT) — invited — in preparation (ScholarOne). Journal version of the BEP-2026-03 working paper; one revision serves both venues.
 - *Authorization That Survives Disconnection: Capability-Based Security and Attested Evidence for the Cloud-Fog-Edge Continuum* — V. Stantchev. Future Internet (MDPI) — invited Special Issue article — in preparation.
 - *Multi-objective volunteer assignment in the post-disaster phase — extension (4R reframing, fuzzy-aggregated objectives, reproducible tooling)* — P. Rabiei, D. Arias-Aranda, V. Stantchev. Systems (MDPI) — revision under review. Extends Rabiei et al. 2023 (Expert Systems with Applications).
 - *Bridging the Gap: Automated Transformation of IoT Data Streams for ISO 27001 Compliant Logging in Ambient Assisted Living Environments* — K. Gawande, V. Stantchev. Applied Sciences (MDPI), Special Issue 'The Internet of Things (IoT) and Its Application in Monitoring: 2nd Edition' — revised resubmission under review (applsci-4185765, resubmitted 2026-07-10).
@@ -71,4 +73,4 @@ Computational jurisprudence (CJ) — the discipline in which compliance becomes 
 
 ---
 
-*Prepared by Vladimir Stantchev. Maintained from a local profile database; last updated 2026-07-20.*
+*Prepared by Vladimir Stantchev. Maintained from a local profile database; last updated 2026-07-21.*
