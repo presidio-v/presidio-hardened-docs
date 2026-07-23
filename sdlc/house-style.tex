@@ -15,6 +15,12 @@
 % suppress LaTeX's own section numbering to avoid "1 1. Scope".
 \setcounter{secnumdepth}{0}
 
+% Let long typewriter tokens (repo/package names like presidio-hardened-*) wrap
+% at their hyphens instead of overflowing the right margin. Also give the line
+% breaker some slack for the remaining tight lines.
+\usepackage[htt]{hyphenat}
+\emergencystretch=2em
+
 % --- House style ----------------------------------------------------------
 \usepackage{titlesec}
 \usepackage{fancyhdr}

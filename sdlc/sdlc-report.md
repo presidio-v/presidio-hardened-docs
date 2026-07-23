@@ -341,10 +341,11 @@ publicly committed:
 - **Fuzz and property-based testing.** Atheris harnesses now guard the
   security-critical parsers on the hardened flagship repositories; coverage is
   being extended across the rest of the family.
-- **OpenSSF Best-Practices Badge.** Achieved at **silver** on the first hardened
-  repositories (`presidio-hardened-repo`, `presidio-hardened-ikigov-assess`,
-  `presidio-hardened-arch-translucency`) via a documented, repeatable playbook;
-  rollout to the remaining components and a gold-tier push are in progress.
+- **OpenSSF Best-Practices Badge.** Achieved at **silver** — first on the
+  flagship `x402` (the repository the repeatable playbook was derived from), then
+  on the hardening skill and the `ikigov-assess` and `arch-translucency`
+  flagships — via that documented playbook; rollout to the remaining components
+  and a gold-tier push are in progress.
 - **Formal certification path.** SOC 2 at minimum, timed to a commercial-tier
   launch; ISO/IEC 27001 evaluated thereafter.
 
