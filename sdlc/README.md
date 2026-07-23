@@ -8,4 +8,4 @@ The report describes two baselines — **open-source** (applies to every
 full framework for PRESIDIO-operated services and paid-customer deployments).
 See §1 of the report for the distinction.
 
-Version 1.0 · 2026-04-20.
+Version 1.2 · 2026-07-23.
