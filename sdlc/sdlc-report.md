@@ -1,8 +1,8 @@
 ---
 title: PRESIDIO — Secure Development Lifecycle
 subtitle: Public report on governance, quality, security, and supply-chain posture
-version: 1.1
-date: 2026-06-26
+version: 1.2
+date: 2026-07-23
 audience: Customers, partners, and prospective adopters
 ---
 
@@ -222,8 +222,8 @@ The release gate aggregates:
 | Build provenance | SLSA v1.0 Build Level 3 — hardened, isolated GitHub-hosted builds with non-forgeable in-toto provenance attestations (signing identity inaccessible to build steps) | commercial-operated |
 | Artefact signing | Keyless signing via Sigstore; single trust root is the build workflow's OIDC identity; no long-lived signing keys exist in the project | commercial-operated |
 | Publishing | Trusted Publishing from the build platform to the package registry — no API tokens stored | commercial-operated |
-| Software Bill of Materials | CycloneDX v1.6 JSON, generated per release and attached to every release | commercial-operated |
-| Dependency pinning | Lockfile committed and enforced by a CI job; any drift between the lockfile and the project manifest fails the build | both |
+| Software Bill of Materials | CycloneDX v1.6 JSON, generated per release, attached to every release, and covered by the build-provenance attestation alongside the distribution artefacts | commercial-operated |
+| Dependency pinning | Lockfile committed and enforced by a CI job (drift between the lockfile and the manifest fails the build); GitHub Actions pinned to commit SHAs and CI toolchain installs pinned by hash on the hardened repositories | both |
 | Vulnerability gate | Automated dependency audit on every pull request; pull request blocked on unwaived Medium-or-higher findings | both |
 | Automated updates | Dependency-update automation raises security and minor-version pull requests, each subject to the normal CI pipeline | both |
 | Container images | Digest-pinned base images; non-root runtime; read-only root filesystem; no-new-privileges and all capabilities dropped | commercial-operated |
@@ -315,6 +315,7 @@ Headline metrics published per release:
 | ASVS Level 3 aspirational (auth + crypto) | Status recorded, gaps have remediation dates |
 | Adversary chains closed, waived, or transferred | All |
 | OpenSSF Scorecard | ≥ 7.0 |
+| OpenSSF Best Practices badge | Silver on hardened repositories; rolling out family-wide |
 | SLSA provenance level | ≥ Build Level 3 |
 | Uptime (service, free tier) | ≥ 99.5 % per month |
 | Mean time to remediate critical security patch | ≤ 7 days |
@@ -337,10 +338,14 @@ publicly committed:
   builds with non-forgeable provenance) is in place; the next step is hermetic,
   byte-reproducible builds — a self-imposed stretch target, as SLSA v1.0 defines
   no Build Level 4.
-- **Fuzz and property-based testing.** Expanded coverage of security-critical
-  parsers.
-- **OpenSSF Best-Practices Badge.** Submission once the single-maintainer
-  governance caveats are resolved.
+- **Fuzz and property-based testing.** Atheris harnesses now guard the
+  security-critical parsers on the hardened flagship repositories; coverage is
+  being extended across the rest of the family.
+- **OpenSSF Best-Practices Badge.** Achieved at **silver** — first on the
+  flagship `x402` (the repository the repeatable playbook was derived from), then
+  on the hardening skill and the `ikigov-assess` and `arch-translucency`
+  flagships — via that documented playbook; rollout to the remaining components
+  and a gold-tier push are in progress.
 - **Formal certification path.** SOC 2 at minimum, timed to a commercial-tier
   launch; ISO/IEC 27001 evaluated thereafter.
 

@@ -17,6 +17,26 @@ Public documentation for the PRESIDIO *hardened-\** product family.
   research background and citation metrics for Vladimir Stantchev.
   Refreshed automatically every Monday.
 
+## OpenSSF Best Practices & Scorecard
+
+The family is adopting the [OpenSSF Best Practices badge](https://www.bestpractices.dev)
+and hardening against the [OpenSSF Scorecard](https://scorecard.dev). The
+repositories below have completed the baseline; the badges are live, so the tier
+and the score refresh automatically.
+
+| Repository | Best Practices | Scorecard |
+|---|---|---|
+| [`presidio-hardened-x402`](https://github.com/presidio-v/presidio-hardened-x402) (flagship; first hardened) | [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13675/badge)](https://www.bestpractices.dev/projects/13675) | [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-hardened-x402/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-hardened-x402) |
+| [`presidio-hardened-repo`](https://github.com/presidio-v/presidio-hardened-repo) (the hardening skill) | [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13746/badge)](https://www.bestpractices.dev/projects/13746) | [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-hardened-repo/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-hardened-repo) |
+| [`presidio-hardened-ikigov-assess`](https://github.com/presidio-v/presidio-hardened-ikigov-assess) | [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13748/badge)](https://www.bestpractices.dev/projects/13748) | [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-hardened-ikigov-assess/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-hardened-ikigov-assess) |
+| [`presidio-hardened-arch-translucency`](https://github.com/presidio-v/presidio-hardened-arch-translucency) | [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13750/badge)](https://www.bestpractices.dev/projects/13750) | [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-hardened-arch-translucency/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-hardened-arch-translucency) |
+
+The repeatable playbook behind these — governance/security docs, Scorecard and
+CodeQL workflows, hash-pinned dependencies, signed releases, Atheris fuzzing, and
+a two-person review gate — lives in
+[`presidio-hardened-repo`](https://github.com/presidio-v/presidio-hardened-repo)
+and is being rolled out across the rest of the family.
+
 ## Weekly research notes
 
 The repository [wiki](https://github.com/presidio-v/presidio-hardened-docs/wiki)
