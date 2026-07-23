@@ -1,0 +1,37 @@
+% PRESIDIO SDLC report — house style, injected via pandoc --include-in-header.
+% Reproduces the original bespoke LaTeX look (custom preamble lived only in the
+% x402 outer repo's built .tex; no build script was ever tracked) on top of
+% pandoc's default template, which supplies the table/list/link machinery.
+
+% --- Unicode glyphs -------------------------------------------------------
+% pdflatex + inputenc(utf8) does not know these math/punctuation codepoints;
+% map each so the literal characters in the Markdown render correctly.
+\DeclareUnicodeCharacter{2014}{\textemdash}          % — em dash
+\DeclareUnicodeCharacter{2265}{\ensuremath{\geq}}    % ≥
+\DeclareUnicodeCharacter{2264}{\ensuremath{\leq}}    % ≤
+\DeclareUnicodeCharacter{00A7}{\S}                    % § section sign
+
+% Section numbers are written literally in the headings ("# 1. Scope"), so
+% suppress LaTeX's own section numbering to avoid "1 1. Scope".
+\setcounter{secnumdepth}{0}
+
+% --- House style ----------------------------------------------------------
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+
+\titleformat{\section}{\Large\bfseries}{}{0em}{}
+\titleformat{\subsection}{\large\bfseries}{}{0em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{}{0em}{}
+\titlespacing*{\section}{0pt}{1.4em}{0.6em}
+\titlespacing*{\subsection}{0pt}{1.0em}{0.4em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small PRESIDIO --- Secure Development Lifecycle}
+\fancyhead[R]{\small Public report}
+\fancyfoot[C]{\small \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{14pt}
+
+\setlist{nosep,leftmargin=1.25em}
