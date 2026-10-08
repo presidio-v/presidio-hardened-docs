@@ -7,7 +7,11 @@ Public documentation for the PRESIDIO *hardened-\** product family.
 - **[SDLC report](sdlc/sdlc-report.md)** ([PDF](sdlc/sdlc-report.pdf)) —
   public-facing description of the PRESIDIO Secure Development Lifecycle:
   governance, quality, security, supply-chain, operations, and privacy
-  posture across the family.
+  posture across the family (v1.3, 2026-10-08).
+
+- **[SDLC applicability matrix](sdlc/applicability.md)** — which baseline
+  applies to each public repository, the controls measured for it, and its
+  known gaps.
 
 - **[Public portfolio overview](portfolio/README.md)** —
   public-facing component map and aggregate metrics for the hardened product
