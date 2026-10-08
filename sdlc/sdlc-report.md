@@ -1,8 +1,8 @@
 ---
 title: PRESIDIO — Secure Development Lifecycle
 subtitle: Public report on governance, quality, security, and supply-chain posture
-version: 1.2
-date: 2026-07-23
+version: 1.3
+date: 2026-10-08
 audience: Customers, partners, and prospective adopters
 ---
 
@@ -18,9 +18,11 @@ verify the posture without access to private systems.
 
 This report summarises the lifecycle at a level appropriate for customers and
 partners who need to understand how PRESIDIO software is built, verified,
-released, and operated. It is a living document: the full framework is
-versioned inside each product's repository and reviewed on a cadence described
-in §3.
+released, and operated. It is a living document, reviewed quarterly (§3.2).
+The full framework is authored and versioned inside the flagship product that
+runs as a PRESIDIO-operated service (`presidio-hardened-x402`); every other
+repository states which baseline applies to it, and the family-wide mapping is
+published in [`applicability.md`](applicability.md).
 
 ---
 
@@ -40,12 +42,13 @@ software runs, not by the language or package format:
 - **Commercial-operated baseline.** Adds the full framework on top of the
   open-source baseline: STRIDE + LINDDUN GO threat modelling, OWASP ASVS 5.0
   L2 verification (L3 aspirational for authentication and cryptography), an
-  adversary-chain release gate, SLSA v1.0 Build L3 provenance, Sigstore
+  adversary-chain release gate, SLSA v1.2 Build L3 provenance, Sigstore
   keyless signing, CycloneDX SBOMs, a DPIA, SLOs and an incident-response
   policy. This baseline applies to:
 
     - services operated by PRESIDIO inside PRESIDIO-controlled EU
-      infrastructure (e.g. the planned x402 hosted screening service);
+      infrastructure (today: the x402 screening service at
+      `screen.presidio-group.eu`, live since April 2026);
     - deployments delivered to paying customers under contract, whether or
       not the underlying code is also published on PyPI;
     - any codebase that processes personal data or handles payments on
@@ -86,9 +89,9 @@ combined so that each lifecycle phase has a well-defined control catalogue.
 | Anchor | ISO/IEC/IEEE 29148:2018 | Requirements engineering; RFC 2119 language; traceability |
 | Overlay | OWASP ASVS 5.0 | Application-security verification; **L2 baseline** for the commercial-operated tier, **L3 aspirational** for authentication and cryptography in PRESIDIO-operated services |
 | Overlay | LINDDUN GO | Privacy-threat modelling (EU-origin, PII-centric) |
-| Overlay | SLSA v1.0 | Build-time supply-chain integrity; **Build Level 3** |
+| Overlay | SLSA v1.2 | Build-time supply-chain integrity; **Build Level 3** |
 | Overlay | OpenSSF Scorecard | Automated open-source posture checks; **score ≥ 7.0** |
-| Reference | ISO/IEC 27001 Annex A.14 | Development-and-maintenance controls |
+| Reference | ISO/IEC 27001:2022 Annex A 8.25–8.34 | Secure development controls (the 2013 edition's Annex A.14) |
 | Reference | ISO/IEC 27034-1, ISO/IEC 29100 | Application-security and privacy concepts |
 | Legal | GDPR Art. 25 (privacy by design), Art. 35 (DPIA) | Regulatory anchor |
 
@@ -103,14 +106,21 @@ launch, not a current commitment.
 
 ## 3.1 Document set
 
-Each product ships a full SDLC document set inside its repository, covering
-charter and scope, quality model, requirements register, architecture,
+The **commercial-operated** baseline carries a full SDLC document set inside
+the product's repository, covering charter and scope, quality model, requirements register, architecture,
 threat model, verification strategy, supply-chain posture, operations
 runbooks, governance policy, a traceability matrix, a framework-alignment
 table, a risk register, a Data Protection Impact Assessment (DPIA) where
 personal data is handled, and an Architecture Decision Record (ADR) log.
 
-Every document carries structured metadata: identifier, version, last-reviewed
+Repositories on the **open-source baseline** do not carry that set. Each one
+states its tier in its `SECURITY.md` and points to the workflows that provide
+its controls; `applicability.md` lists every public repository with its tier
+and the controls measured for it. A repository moves up a tier when it starts
+running as a PRESIDIO-operated service, is delivered to a paying customer, or
+starts handling personal data or payments on PRESIDIO's behalf.
+
+Every document in the full set carries structured metadata: identifier, version, last-reviewed
 date, next-review date, and the framework editions that applied at last
 review. This makes cadence failures visible and framework drift detectable.
 
@@ -192,10 +202,11 @@ No chain may remain in state *open* or *unassessed* at release.
 
 ## 5.3 Verification *(commercial-operated)*
 
-Verification follows OWASP ASVS 5.0 at Level 2 for commercial-operated
-products. Services operated by PRESIDIO additionally target Level 3
+Verification targets OWASP ASVS 5.0.0 Level 2 for commercial-operated
+products; open gaps against that target are listed with their remediation
+dates in the product's verification record and risk register. Services operated by PRESIDIO additionally target Level 3
 aspirationally for the two chapters where the bar is highest —
-Authentication (V2) and Cryptography (V6) — with every gap documented and
+Authentication (V6) and Cryptography (V11) — with every gap documented and
 tracked. The open-source baseline is covered by the subset of these controls
 that the automated release gate enforces in public CI.
 
@@ -219,19 +230,18 @@ The release gate aggregates:
 
 | Control | Mechanism | Tier |
 |---|---|---|
-| Build provenance | SLSA v1.0 Build Level 3 — hardened, isolated GitHub-hosted builds with non-forgeable in-toto provenance attestations (signing identity inaccessible to build steps) | commercial-operated |
-| Artefact signing | Keyless signing via Sigstore; single trust root is the build workflow's OIDC identity; no long-lived signing keys exist in the project | commercial-operated |
+| Build provenance | SLSA v1.2 Build Level 3 — hardened, isolated GitHub-hosted builds with non-forgeable in-toto provenance attestations (signing identity inaccessible to build steps) | commercial-operated |
+| Artefact signing | Keyless signing via Sigstore for published packages; the release pipeline holds no long-lived key. Long-lived keys that do exist — tag-signing keys and service evidence-signing keys — are listed with their custody in the product's risk register | commercial-operated |
 | Publishing | Trusted Publishing from the build platform to the package registry — no API tokens stored | commercial-operated |
-| Software Bill of Materials | CycloneDX v1.6 JSON, generated per release, attached to every release, and covered by the build-provenance attestation alongside the distribution artefacts | commercial-operated |
-| Dependency pinning | Lockfile committed and enforced by a CI job (drift between the lockfile and the manifest fails the build); GitHub Actions pinned to commit SHAs and CI toolchain installs pinned by hash on the hardened repositories | both |
-| Vulnerability gate | Automated dependency audit on every pull request; pull request blocked on unwaived Medium-or-higher findings | both |
+| Software Bill of Materials | CycloneDX v1.6 JSON, generated per release and attached to the release. Container-image SBOMs are planned | commercial-operated |
+| Dependency pinning | Lockfile committed and enforced by a CI job (drift between the lockfile and the manifest fails the build); GitHub Actions pinned to commit SHAs on the hardened repositories; CI toolchain installs are not yet hash-pinned | both |
+| Vulnerability gate | Automated dependency audit (`pip-audit`, `cargo-deny`) blocking unwaived Medium-or-higher findings. Commercial-operated: on every pull request. Open-source baseline: required; per-repository status, including gaps, in `applicability.md` | both |
 | Automated updates | Dependency-update automation raises security and minor-version pull requests, each subject to the normal CI pipeline | both |
-| Container images | Digest-pinned base images; non-root runtime; read-only root filesystem; no-new-privileges and all capabilities dropped | commercial-operated |
-| Posture score | OpenSSF Scorecard refreshed weekly; target score **≥ 7.0**; dips open a risk-register entry automatically | both |
+| Container images | Digest-pinned base images; non-root runtime; read-only root filesystem; no-new-privileges and all capabilities dropped. Image signing and provenance are planned, not yet in place | commercial-operated |
+| Posture score | OpenSSF Scorecard refreshed weekly on public repositories; target score **≥ 7.0**; a dip is triaged into the risk register at the next review | both |
 
-Git tags are signed, and container images are signed with the same keyless
-mechanism. Verification instructions for downstream consumers are published
-alongside every release.
+Release tags are signed. Verification instructions for published packages
+are released alongside every release.
 
 ---
 
@@ -247,7 +257,7 @@ alongside every release.
 | Mean time to remediate — critical security patch | ≤ 7 days |
 | Mean time to remediate — high-severity patch | ≤ 30 days |
 
-Objective misses open a risk-register entry at the next monthly review.
+Objective misses are triaged into the risk register at the next monthly review.
 
 ## 7.2 Incident response
 
@@ -311,7 +321,7 @@ Headline metrics published per release:
 | Lint and test pass on main | 100 % |
 | Unit + integration line coverage | ≥ 90 % |
 | Unwaived Medium-or-higher CVEs | 0 |
-| ASVS Level 2 controls passed | 100 % |
+| ASVS Level 2 controls passed | Target 100 %; open gaps listed with remediation dates |
 | ASVS Level 3 aspirational (auth + crypto) | Status recorded, gaps have remediation dates |
 | Adversary chains closed, waived, or transferred | All |
 | OpenSSF Scorecard | ≥ 7.0 |
@@ -321,8 +331,8 @@ Headline metrics published per release:
 | Mean time to remediate critical security patch | ≤ 7 days |
 
 These metrics are visible in release notes and in the public repository.
-A deterioration opens a risk-register entry by policy; the risk register is
-reviewed quarterly.
+A deterioration is triaged into the risk register by policy (a manual step,
+not an automated one); the risk register is reviewed quarterly.
 
 ---
 
@@ -336,7 +346,7 @@ publicly committed:
   current maintainer model.
 - **Hermetic and reproducible builds.** SLSA Build Level 3 (hardened, isolated
   builds with non-forgeable provenance) is in place; the next step is hermetic,
-  byte-reproducible builds — a self-imposed stretch target, as SLSA v1.0 defines
+  byte-reproducible builds — a self-imposed stretch target, as SLSA defines
   no Build Level 4.
 - **Fuzz and property-based testing.** Atheris harnesses now guard the
   security-critical parsers on the hardened flagship repositories; coverage is

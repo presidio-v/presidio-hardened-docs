@@ -22,4 +22,4 @@ and unicode glyph maps live in [`house-style.tex`](house-style.tex) (injected vi
 LaTeX template. Version and date are read from the report's front matter, so a
 version bump only needs editing `sdlc-report.md`.
 
-Version 1.2 · 2026-07-23.
+Version 1.3 · 2026-10-08.
