@@ -13,11 +13,11 @@
 
 | Metric | Value |
 |---|---|
-| Total citations | 2764 |
+| Total citations | 2755 |
 | h-index | 28 |
 | i10-index | 55 |
 
-Source: [Google Scholar](https://scholar.google.com/citations?user=KrWci6QAAAAJ), as of 2026-07-20.
+Source: [Google Scholar](https://scholar.google.com/citations?user=KrWci6QAAAAJ), as of 2026-10-17.
 
 ## Research interests
 
@@ -32,12 +32,13 @@ Source: [Google Scholar](https://scholar.google.com/citations?user=KrWci6QAAAAJ)
 
 ## Research paradigm
 
-Computational jurisprudence (CJ) — the discipline in which compliance becomes a runtime, compositional, proof-carrying property of computation itself rather than documentation checked at human latency — is the paradigm that organises Stantchev's current research. Its lineage runs through almost three decades of his work: architectural translucency and dependable service-oriented computing with Malek (nonfunctional properties as first-class, machine-checkable concerns), QoS and SLA negotiation and enforcement in grid and cloud settings (2009), IT and cloud governance, GRC and ISMS process frameworks (2014–2019), standards-and-risk requirements engineering for blockchain (2020), and fog/edge architectures where authorization must hold locally and offline. The x402 PII-safe agentic-payments work ([arXiv 2604.11430](https://arxiv.org/abs/2604.11430)) and the CJ position paper ([doi:10.5281/zenodo.21245659](https://doi.org/10.5281/zenodo.21245659)) make the through-line explicit: authority that only attenuates as it delegates, verification that is local and fail-closed with no engine in the trust path, and evidence that composes.
+Computational jurisprudence (CJ) — the discipline in which compliance becomes a runtime, compositional, proof-carrying property of computation itself rather than documentation checked at human latency — is the paradigm that organises Stantchev's current research. Its lineage runs through almost three decades of his work: architectural translucency and dependable service-oriented computing with Malek (nonfunctional properties as first-class, machine-checkable concerns), QoS and SLA negotiation and enforcement in grid and cloud settings (2009), IT and cloud governance, GRC and ISMS process frameworks (2014–2019), standards-and-risk requirements engineering for blockchain (2020), and fog/edge architectures where authorization must hold locally and offline. The x402 PII-safe agentic-payments work ([arXiv 2604.11430](https://arxiv.org/abs/2604.11430)) and the CJ article in Future Internet ([doi:10.3390/fi18080437](https://doi.org/10.3390/fi18080437)) make the through-line explicit: authority that only attenuates as it delegates, verification that is local and fail-closed with no engine in the trust path, and evidence that composes.
 
 ## Publications
 
 - *Hardening x402: PII-Safe Agentic Payments via Pre-Execution Metadata Filtering* (2026). V. Stantchev. CoRR (arXiv preprint).
 - *[Business Continuity Management—Identifying Relevant Processes for a Reference Model](https://doi.org/10.3390/app16073219)* (2026). D. Arias-Aranda, K. Haufe, S. Dzombeta, V. Stantchev. Applied Sciences (MDPI), 16(7):3219.
+- *[Computational Jurisprudence: Verifiable Law for Machine Societies](https://doi.org/10.3390/fi18080437)* (2026). V. Stantchev. Future Internet (MDPI), 18(8):437.
 - *[A Novel Enterprise AI Classification Framework for Business Transformation: A Structured Literature Review and Integration of AI Types and Autonomy Levels](https://doi.org/10.3390/info17070646)* (2026). N. Borovac, V. Stantchev. Information (MDPI), 17(7):646.
 - *[Computable Compliance as Institutional Technology: A Demand-Side Entry Point for Peripheral Tech Ecosystems — The Case of Burgas](https://uni-sofia.bg/index.php/eng/content/download/360018/2306858/file/BEP-2026-03.pdf)* (2026). V. Stantchev, T. Sedlarski. Bulgarian Economic Papers, Faculty of Economics, Sofia University (BEP 2026-03).
 - *Introducing a novel multi-objective optimization model for volunteer assignment in the post-disaster phase* (2023). P. Rabiei, D. Arias-Aranda, V. Stantchev. Expert Systems with Applications.
@@ -61,16 +62,10 @@ Computational jurisprudence (CJ) — the discipline in which compliance becomes 
 
 ## Upcoming publications
 
-- *[Computational Jurisprudence: Verifiable Law for Machine Societies](https://doi.org/10.5281/zenodo.21245659)* — V. Stantchev. Future Internet (MDPI) — invited feature paper — under review (submitted 2026-07-18). Position-paper version publicly available on Zenodo (v1.0, 2026-07-07).
-- *Computable Compliance as Institutional Technology: A Demand-Side Entry Point for Peripheral Tech Ecosystems — The Case of Burgas* — V. Stantchev, T. Sedlarski. Journal of Economic Boundaries and Transformation (JEBT) — invited — in preparation (ScholarOne). Journal version of the BEP-2026-03 working paper; one revision serves both venues.
-- *Authorization That Survives Disconnection: Capability-Based Security and Attested Evidence for the Cloud-Fog-Edge Continuum* — V. Stantchev. Future Internet (MDPI) — invited Special Issue article — in preparation.
-- *Multi-objective volunteer assignment in the post-disaster phase — extension (4R reframing, fuzzy-aggregated objectives, reproducible tooling)* — P. Rabiei, D. Arias-Aranda, V. Stantchev. Systems (MDPI) — revision under review. Extends Rabiei et al. 2023 (Expert Systems with Applications).
-- *Bridging the Gap: Automated Transformation of IoT Data Streams for ISO 27001 Compliant Logging in Ambient Assisted Living Environments* — K. Gawande, V. Stantchev. Applied Sciences (MDPI), Special Issue 'The Internet of Things (IoT) and Its Application in Monitoring: 2nd Edition' — revised resubmission under review (applsci-4185765, resubmitted 2026-07-10).
-- *LA-CTL — lightweight authorization for blockchain networks (companion follow-up)* — V. Stantchev, K. Gawande. Applied Sciences (MDPI), blockchain Special Issue — in preparation.
-- *Why Certifying ISO/IEC 27001 Won't Make Your Software CRA-Compliant* — V. Stantchev, K. Haufe. IEEE Security & Privacy (Viewpoint column) — submission-ready. Maps nine BSI TR-03185 requirements as the bridge from ISO/IEC 27034 to CRA-aligned engineering practice.
-- *[AI and IT Governance](https://link.springer.com/book/9783662740019)* — V. Stantchev. Springer Berlin, Heidelberg (monograph) — in production — due 2026-10-14; ISBN 978-3-662-74001-9.
-- *[KI und IT-Governance](https://link.springer.com/book/9783662740934)* — V. Stantchev. Springer Vieweg Berlin, Heidelberg (monograph, German edition) — in production — due 2026-10-09; ISBN 978-3-662-74093-4.
+- *Verifiable Accountability in Agentic and Machine-to-Machine Systems* — V. Stantchev. ACM SIGLOG News, Verification Column — invited article — to appear in Vol. 13 No. 4 (October 2026).
+- *[AI and IT Governance](https://link.springer.com/book/9783662740019)* — V. Stantchev. Springer Berlin, Heidelberg (monograph) — in production — eBook due 2026-10-23, hardcover 2027-02-24; ISBN 978-3-662-74001-9.
+- *[KI und IT-Governance](https://link.springer.com/book/9783662740934)* — V. Stantchev. Springer Vieweg Berlin, Heidelberg (monograph, German edition) — in production — eBook listed for 2026-10-09, hardcover 2027-03-02; ISBN 978-3-662-74093-4.
 
 ---
 
-*Prepared by Vladimir Stantchev. Maintained from a local profile database; last updated 2026-10-12.*
+*Prepared by Vladimir Stantchev. Maintained from a local profile database; last updated 2026-10-17.*

@@ -19,7 +19,8 @@ Public documentation for the PRESIDIO *hardened-\** product family.
 
 - **[Research Background](Research-Background.md)** —
   research background and citation metrics for Vladimir Stantchev.
-  Refreshed automatically every Monday.
+  Refreshed automatically every Monday; the refresh pauses when the
+  underlying citation data is more than 90 days old.
 
 ## OpenSSF Best Practices & Scorecard
 
@@ -66,11 +67,16 @@ applicable) `PRESIDIO-REQ.md`:
 | `presidio-hardened-fl` | <https://github.com/presidio-v/presidio-hardened-fl> |
 | `presidio-hardened-flask` | <https://github.com/presidio-v/presidio-hardened-flask> |
 | `presidio-hardened-ids` | <https://github.com/presidio-v/presidio-hardened-ids> |
+| `presidio-hardened-ikigov-assess` | <https://github.com/presidio-v/presidio-hardened-ikigov-assess> |
 | `presidio-hardened-opcua` | <https://github.com/presidio-v/presidio-hardened-opcua> |
+| `presidio-hardened-repo` | <https://github.com/presidio-v/presidio-hardened-repo> |
 | `presidio-hardened-requests` | <https://github.com/presidio-v/presidio-hardened-requests> |
+| `presidio-hardened-scoutsuite` | <https://github.com/presidio-v/presidio-hardened-scoutsuite> |
+| `presidio-hardened-treasury` | <https://github.com/presidio-v/presidio-hardened-treasury> |
 | `presidio-hardened-vol-assign` | <https://github.com/presidio-v/presidio-hardened-vol-assign> |
 | `presidio-hardened-vuln-scanner` | <https://github.com/presidio-v/presidio-hardened-vuln-scanner> |
 | `presidio-hardened-x402` | <https://github.com/presidio-v/presidio-hardened-x402> |
+| `presidio-hardened-x402-mcp` | <https://github.com/presidio-v/presidio-hardened-x402-mcp> |
 
 Security-disclosure intake and per-product policy are published in each
 repository's `SECURITY.md`.
