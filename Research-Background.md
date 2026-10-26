@@ -68,4 +68,4 @@ Computational jurisprudence (CJ) — the discipline in which compliance becomes 
 
 ---
 
-*Prepared by Vladimir Stantchev. Maintained from a local profile database; last updated 2026-10-19.*
+*Prepared by Vladimir Stantchev. Maintained from a local profile database; last updated 2026-10-26.*
