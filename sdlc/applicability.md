@@ -13,7 +13,7 @@ Companion to [`sdlc-report.md`](sdlc-report.md) §1. It lists every **public**
 measured for it. Private and internal repositories are tiered in an internal
 register with the same rules.
 
-Measured 2026-10-08 (flask updated 2026-10-09) from the repositories' own workflow files. A dash means the
+Measured 2026-10-08 (flask updated 2026-10-09; presidio-evidence and presidio-hardened-ai added 2026-11-03, when they became public) from the repositories' own workflow files. A dash means the
 control is absent, not unknown. Gaps are listed as gaps.
 
 ## Tier rules
@@ -63,6 +63,8 @@ dependency audit in CI · **Dep** Dependabot · **Sec** `SECURITY.md` ·
 | presidio-hardened-ids | PyPI | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-esp32 | — | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-repo | PyPI | ✓ | ✓ | – | ✓ | ✓ | – | – | ✓ |
+| presidio-evidence | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | – | ✓ | ✓ |
+| presidio-hardened-ai | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | x402-pre-payment-guard | — (spec + vectors) | not measured | | | | | | | |
 
 The **Tier** column counts an existing "Software Development Lifecycle" section
@@ -81,9 +83,9 @@ is tracked in the internal review tracker.
   vuln-scanner, fl, ids, esp32, hardened-repo. scoutsuite audits only at
   release, not per pull request.
 - **No CodeQL:** treasury (Rust; `clippy` and `cargo-deny` run).
-- **No tier statement in `SECURITY.md`:** treasury, hardened-repo. (Every public repository states its tier in its README since 2026-10-09.)
+- **No tier statement in `SECURITY.md`:** treasury, hardened-repo, evidence. (Every public repository states its tier in its README since 2026-10-09.)
 - **No `PRESIDIO-REQ.md`:** hardened-repo.
-- **Scorecard only on 6 of 18 repositories.** The ≥ 7.0 target is enforced only
+- **Scorecard only on 7 of 20 repositories.** The ≥ 7.0 target is enforced only
   where the workflow runs.
 
 ## Review
