@@ -1,7 +1,7 @@
 ---
 title: PRESIDIO SDLC — Applicability Matrix
-version: 1.0
-date: 2026-10-08
+version: 1.1
+date: 2026-11-05
 next_review: 2027-01-08
 audience: Customers, partners, and prospective adopters
 ---
@@ -13,7 +13,7 @@ Companion to [`sdlc-report.md`](sdlc-report.md) §1. It lists every **public**
 measured for it. Private and internal repositories are tiered in an internal
 register with the same rules.
 
-Measured 2026-10-08 (flask updated 2026-10-09) from the repositories' own workflow files. A dash means the
+Measured 2026-11-05 from the repositories' default branches (workflow files, `SECURITY.md`, `PRESIDIO-REQ.md`) and from PyPI. Previous measurement: 2026-10-08. A dash means the
 control is absent, not unknown. Gaps are listed as gaps.
 
 ## Tier rules
@@ -47,23 +47,24 @@ dependency audit in CI · **Dep** Dependabot · **Sec** `SECURITY.md` ·
 |---|---|---|---|---|---|---|---|---|---|
 | presidio-hardened-x402 (library) | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | presidio-hardened-x402-mcp | PyPI, MCP Registry | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| presidio-hardened-ai | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| presidio-evidence | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | – | ✓ | ✓ |
 | presidio-hardened-arch-translucency | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| presidio-hardened-ikigov-assess | PyPI | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ | ✓ |
-| presidio-hardened-scoutsuite | PyPI | ✓ | ✓ | release only | ✓ | ✓ | ✓ | ✓ | – |
-| presidio-hardened-treasury | — (Rust) | ✓ | clippy only | ✓ (`cargo-deny`) | ✓ | ✓ | – | ✓ | – |
+| presidio-hardened-ikigov-assess | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| presidio-hardened-scoutsuite | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
+| presidio-hardened-treasury | — (Rust) | ✓ | ✓ | ✓ (`cargo-deny`) | ✓ | ✓ | – | ✓ | ✓ |
 | presidio-hardened-angellist | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| presidio-hardened-vol-assign | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
+| presidio-hardened-vol-assign | — (GitHub releases) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-fastapi | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-flask | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-requests | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-opcua | PyPI | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ | – |
-| presidio-hardened-crypto-channel | PyPI | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ | – |
-| presidio-hardened-vuln-scanner | PyPI | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ | – |
-| presidio-hardened-fl | PyPI | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ | – |
-| presidio-hardened-ids | PyPI | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ | – |
-| presidio-hardened-esp32 | — | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ | – |
-| presidio-hardened-repo | PyPI | ✓ | ✓ | – | ✓ | ✓ | – | – | ✓ |
-| x402-pre-payment-guard | — (spec + vectors) | not measured | | | | | | | |
+| presidio-hardened-crypto-channel | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
+| presidio-hardened-vuln-scanner | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
+| presidio-hardened-fl | — | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
+| presidio-hardened-ids | — | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
+| presidio-hardened-esp32 | — | build only | ✓ | – | ✓ | ✓ | ✓ | ✓ | – |
+| presidio-hardened-repo | — | ✓ | ✓ | – | ✓ | ✓ | – | – | ✓ |
 
 The **Tier** column counts an existing "Software Development Lifecycle" section
 in `SECURITY.md`. The rollout of an explicit tier sentence into those sections
@@ -74,17 +75,20 @@ is tracked in the internal review tracker.
 | Repository | Reason |
 |---|---|
 | presidio-hardened-docs | Documentation only (this report) |
+| x402-pre-payment-guard | Collaborative working draft for [x402-foundation/x402#2533](https://github.com/x402-foundation/x402/issues/2533): interface spec, reference plugins and conformance vectors. Not published and not a PRESIDIO product |
 
 ## Known gaps, open-source baseline
 
-- **No dependency audit in CI:** ikigov-assess, opcua, crypto-channel,
-  vuln-scanner, fl, ids, esp32, hardened-repo. scoutsuite audits only at
-  release, not per pull request.
-- **No CodeQL:** treasury (Rust; `clippy` and `cargo-deny` run).
-- **No tier statement in `SECURITY.md`:** treasury, hardened-repo. (Every public repository states its tier in its README since 2026-10-09.)
+- **No dependency audit in CI:** opcua, esp32, hardened-repo. (Closed since
+  2026-10-08: ikigov-assess, crypto-channel, vuln-scanner, fl, ids; scoutsuite now
+  audits on every pull request, not only at release.)
+- **No tests or lint in CI:** esp32 builds the test app for four targets but
+  neither runs it nor lints.
+- **No tier statement in `SECURITY.md`:** treasury, hardened-repo, evidence.
+  (Every public repository states its tier in its README since 2026-10-09.)
 - **No `PRESIDIO-REQ.md`:** hardened-repo.
-- **Scorecard only on 6 of 18 repositories.** The ≥ 7.0 target is enforced only
-  where the workflow runs.
+- **Scorecard on 9 of 20 repositories.** The ≥ 7.0 target is enforced only
+  where the workflow runs; all nine score 8.4 or higher.
 
 ## Review
 
