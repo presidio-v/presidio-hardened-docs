@@ -25,9 +25,9 @@ Public documentation for the PRESIDIO *hardened-\** product family.
 ## OpenSSF Best Practices & Scorecard
 
 The family is adopting the [OpenSSF Best Practices badge](https://www.bestpractices.dev)
-and hardening against the [OpenSSF Scorecard](https://scorecard.dev). The
-repositories below have completed the baseline; the badges are live, so the tier
-and the score refresh automatically.
+and hardening against the [OpenSSF Scorecard](https://scorecard.dev). The nine
+repositories below hold the Best Practices **silver** badge and publish Scorecard
+results; the badges are live, so the tier and the score refresh automatically.
 
 | Repository | Best Practices | Scorecard |
 |---|---|---|
@@ -35,6 +35,11 @@ and the score refresh automatically.
 | [`presidio-hardened-repo`](https://github.com/presidio-v/presidio-hardened-repo) (the hardening skill) | [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13746/badge)](https://www.bestpractices.dev/projects/13746) | [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-hardened-repo/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-hardened-repo) |
 | [`presidio-hardened-ikigov-assess`](https://github.com/presidio-v/presidio-hardened-ikigov-assess) | [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13748/badge)](https://www.bestpractices.dev/projects/13748) | [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-hardened-ikigov-assess/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-hardened-ikigov-assess) |
 | [`presidio-hardened-arch-translucency`](https://github.com/presidio-v/presidio-hardened-arch-translucency) | [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13750/badge)](https://www.bestpractices.dev/projects/13750) | [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-hardened-arch-translucency/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-hardened-arch-translucency) |
+| [`presidio-hardened-angellist`](https://github.com/presidio-v/presidio-hardened-angellist) | [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13877/badge)](https://www.bestpractices.dev/projects/13877) | [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-hardened-angellist/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-hardened-angellist) |
+| [`presidio-hardened-x402-mcp`](https://github.com/presidio-v/presidio-hardened-x402-mcp) | [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/13930/badge)](https://www.bestpractices.dev/projects/13930) | [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-hardened-x402-mcp/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-hardened-x402-mcp) |
+| [`presidio-hardened-treasury`](https://github.com/presidio-v/presidio-hardened-treasury) | [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/15897/badge)](https://www.bestpractices.dev/projects/15897) | [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-hardened-treasury/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-hardened-treasury) |
+| [`presidio-evidence`](https://github.com/presidio-v/presidio-evidence) | [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/16243/badge)](https://www.bestpractices.dev/projects/16243) | [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-evidence/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-evidence) |
+| [`presidio-hardened-ai`](https://github.com/presidio-v/presidio-hardened-ai) | [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/16301/badge)](https://www.bestpractices.dev/projects/16301) | [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/presidio-v/presidio-hardened-ai/badge)](https://scorecard.dev/viewer/?uri=github.com/presidio-v/presidio-hardened-ai) |
 
 The repeatable playbook behind these — governance/security docs, Scorecard and
 CodeQL workflows, hash-pinned dependencies, signed releases, Atheris fuzzing, and
@@ -59,6 +64,8 @@ applicable) `PRESIDIO-REQ.md`:
 
 | Product | Repository |
 |---|---|
+| `presidio-evidence` | <https://github.com/presidio-v/presidio-evidence> |
+| `presidio-hardened-ai` | <https://github.com/presidio-v/presidio-hardened-ai> |
 | `presidio-hardened-angellist` | <https://github.com/presidio-v/presidio-hardened-angellist> |
 | `presidio-hardened-arch-translucency` | <https://github.com/presidio-v/presidio-hardened-arch-translucency> |
 | `presidio-hardened-crypto-channel` | <https://github.com/presidio-v/presidio-hardened-crypto-channel> |
