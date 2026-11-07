@@ -1,7 +1,7 @@
 ---
 title: PRESIDIO SDLC — Applicability Matrix
-version: 1.1
-date: 2026-11-05
+version: 1.2
+date: 2026-11-07
 next_review: 2027-01-08
 audience: Customers, partners, and prospective adopters
 ---
@@ -13,7 +13,7 @@ Companion to [`sdlc-report.md`](sdlc-report.md) §1. It lists every **public**
 measured for it. Private and internal repositories are tiered in an internal
 register with the same rules.
 
-Measured 2026-11-05 from the repositories' default branches (workflow files, `SECURITY.md`, `PRESIDIO-REQ.md`) and from PyPI. Previous measurement: 2026-10-08. A dash means the
+Measured 2026-11-07 from the repositories' default branches (workflow files, `SECURITY.md`, `PRESIDIO-REQ.md`) and from PyPI. Previous measurements: 2026-11-05, 2026-10-08. A dash means the
 control is absent, not unknown. Gaps are listed as gaps.
 
 ## Tier rules
@@ -48,23 +48,23 @@ dependency audit in CI · **Dep** Dependabot · **Sec** `SECURITY.md` ·
 | presidio-hardened-x402 (library) | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | presidio-hardened-x402-mcp | PyPI, MCP Registry | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | presidio-hardened-ai | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| presidio-evidence | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | – | ✓ | ✓ |
+| presidio-evidence | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | presidio-hardened-arch-translucency | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | presidio-hardened-ikigov-assess | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | presidio-hardened-scoutsuite | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
-| presidio-hardened-treasury | — (Rust) | ✓ | ✓ | ✓ (`cargo-deny`) | ✓ | ✓ | – | ✓ | ✓ |
+| presidio-hardened-treasury | — (Rust) | ✓ | ✓ | ✓ (`cargo-deny`) | ✓ | ✓ | ✓ | ✓ | ✓ |
 | presidio-hardened-angellist | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | presidio-hardened-vol-assign | — (GitHub releases) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-fastapi | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-flask | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-requests | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
-| presidio-hardened-opcua | PyPI | ✓ | ✓ | – | ✓ | ✓ | ✓ | ✓ | – |
+| presidio-hardened-opcua | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-crypto-channel | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-vuln-scanner | PyPI | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-fl | — | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-ids | — | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
-| presidio-hardened-esp32 | — | build only | ✓ | – | ✓ | ✓ | ✓ | ✓ | – |
-| presidio-hardened-repo | — | ✓ | ✓ | – | ✓ | ✓ | – | – | ✓ |
+| presidio-hardened-esp32 | — | ✓ (host tests) | ✓ | ✓ (pin check) | ✓ | ✓ | ✓ | ✓ | – |
+| presidio-hardened-repo | — | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – | ✓ |
 
 The **Tier** column counts an existing "Software Development Lifecycle" section
 in `SECURITY.md`. The rollout of an explicit tier sentence into those sections
@@ -79,14 +79,25 @@ is tracked in the internal review tracker.
 
 ## Known gaps, open-source baseline
 
-- **No dependency audit in CI:** opcua, esp32, hardened-repo. (Closed since
-  2026-10-08: ikigov-assess, crypto-channel, vuln-scanner, fl, ids; scoutsuite now
-  audits on every pull request, not only at release.)
-- **No tests or lint in CI:** esp32 builds the test app for four targets but
-  neither runs it nor lints.
-- **No tier statement in `SECURITY.md`:** treasury, hardened-repo, evidence.
-  (Every public repository states its tier in its README since 2026-10-09.)
 - **No `PRESIDIO-REQ.md`:** hardened-repo.
+- **Accepted exceptions in the audits:**
+  - opcua's audit ignores PYSEC-2026-888 (CVE-2022-25304). Every `opcua` release
+    has it and there is no fix upstream. The package caps chunk size, chunk count
+    and message size on import, and documents this in its `SECURITY.md`.
+  - esp32 declares no managed components, so it has nothing to scan for
+    vulnerabilities. Its audit is a pin check: it fails if a dependency is added
+    without an exact version or commit. ESP-IDF itself, with its bundled mbedTLS,
+    is not covered.
+- **esp32 tests run on the host only:** the 40 portable unit tests run on Linux
+  under ASan/UBSan. Hardware paths are built for four targets but not executed in
+  CI.
+
+Closed on 2026-11-07:
+- The CI dependency audits for opcua, esp32 and hardened-repo. Since 2026-10-08,
+  ikigov-assess, crypto-channel, vuln-scanner, fl and ids had already closed this
+  gap, and scoutsuite now audits every pull request.
+- Lint and host tests for esp32.
+- The tier statements in `SECURITY.md` for treasury, hardened-repo and evidence.
 - **Scorecard on 9 of 20 repositories.** The ≥ 7.0 target is enforced only
   where the workflow runs; all nine score 8.4 or higher.
 
