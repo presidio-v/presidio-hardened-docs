@@ -64,7 +64,7 @@ dependency audit in CI · **Dep** Dependabot · **Sec** `SECURITY.md` ·
 | presidio-hardened-fl | — | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-ids | — | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – |
 | presidio-hardened-esp32 | — | ✓ (host tests) | ✓ | ✓ (pin check) | ✓ | ✓ | ✓ | ✓ | – |
-| presidio-hardened-repo | — | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | – | ✓ |
+| presidio-hardened-repo | — | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 
 The **Tier** column counts an existing "Software Development Lifecycle" section
 in `SECURITY.md`. The rollout of an explicit tier sentence into those sections
@@ -79,7 +79,6 @@ is tracked in the internal review tracker.
 
 ## Known gaps, open-source baseline
 
-- **No `PRESIDIO-REQ.md`:** hardened-repo.
 - **Accepted exceptions in the audits:**
   - opcua's audit ignores PYSEC-2026-888 (CVE-2022-25304). Every `opcua` release
     has it and there is no fix upstream. The package caps chunk size, chunk count
@@ -91,6 +90,8 @@ is tracked in the internal review tracker.
 - **esp32 tests run on the host only:** the 40 portable unit tests run on Linux
   under ASan/UBSan. Hardware paths are built for four targets but not executed in
   CI.
+- **Scorecard on 9 of 20 repositories.** The ≥ 7.0 target is enforced only
+  where the workflow runs; all nine score 8.4 or higher.
 
 Closed on 2026-11-07:
 - The CI dependency audits for opcua, esp32 and hardened-repo. Since 2026-10-08,
@@ -98,8 +99,7 @@ Closed on 2026-11-07:
   gap, and scoutsuite now audits every pull request.
 - Lint and host tests for esp32.
 - The tier statements in `SECURITY.md` for treasury, hardened-repo and evidence.
-- **Scorecard on 9 of 20 repositories.** The ≥ 7.0 target is enforced only
-  where the workflow runs; all nine score 8.4 or higher.
+- hardened-repo's `PRESIDIO-REQ.md`.
 
 ## Review
 
